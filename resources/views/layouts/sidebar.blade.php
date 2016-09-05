@@ -27,6 +27,8 @@
     <footer class="page-footer">
         @include('includes.footer')
     </footer>
+    
+     @include('includes.scripts')
 
 </div>
 </body>

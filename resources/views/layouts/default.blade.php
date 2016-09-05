@@ -5,21 +5,24 @@
 </head>
 <body>
 <div>
-
-    <header class="row">
+    
+    <header>
         @include('includes.header')
     </header>
 
-    <div id="main" class="row">
-
+    
+    <main>
             @yield('content')
+    </main>
 
-    </div>
 
+    
     <footer class="page-footer">
         @include('includes.footer')
     </footer>
-
+    
+    @include('includes.scripts')
+    
 </div>
 </body>
 </html>
