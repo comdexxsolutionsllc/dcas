@@ -78,6 +78,12 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
+        
+        'testing' => [
+            'driver' => 'sqlite',
+            'database' => 'database/testing.sql',
+            'prefix' => '',
+        ],
 
     ],
 
