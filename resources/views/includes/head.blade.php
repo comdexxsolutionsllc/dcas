@@ -4,5 +4,9 @@
 
 <title>Super Cool Layouts</title>
 
-<!-- load bootstrap from a cdn -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/3.0.3/css/bootstrap-combined.min.css">
+@include('includes.stylesheets')
+
+<style>
+    body { display: flex; min-height: 100vh; flex-direction: column; }
+    main { flex: 1 0 auto; }
+</style>
