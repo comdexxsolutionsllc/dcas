@@ -7,6 +7,7 @@
     "jquery-ujs": "~1.0.4",
     "vue": "~1.0.8",
     "vue-resource": "~0.1.17",
-    "vue-router": "~0.7.7"
+    "vue-router": "~0.7.7",
+    "materialize": "^0.97.7"
   }
 }
