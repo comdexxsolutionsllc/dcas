@@ -32,7 +32,8 @@
          "doctrine/dbal": "~2.3",
          "ignasbernotas/laravel-model-generator": "^1",
         "laralib/l5scaffold": "^1.0",
-        "laracasts/generators": "^1.1"
+        "laracasts/generators": "^1.1",
+        "codeception/base": "*"
     },
     "autoload": {
         "classmap": [
