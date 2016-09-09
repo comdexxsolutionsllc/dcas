@@ -9,3 +9,9 @@ modules:
     enabled:
         # add framework module here
         - \Helper\Functional
+        - Db
+        - Filesystem
+        - Laravel5
+    config:
+        Laravel5:
+            cleanup: false
