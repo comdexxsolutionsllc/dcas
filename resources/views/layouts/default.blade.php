@@ -5,21 +5,22 @@
 </head>
 <body>
 <div>
-    
-    <header>
-        @include('includes.header')
-    </header>
-
-    
-    <main>
-            @yield('content')
-    </main>
+    <div class="doccontainer">
+        <header>
+            @include('includes.header')
+        </header>
 
 
-    
-    <footer class="page-footer">
-        @include('includes.footer')
-    </footer>
+        <main class="row">
+                @yield('content')
+        </main>
+
+
+
+        <footer class="page-footer">
+            @include('includes.footer')
+        </footer>
+    </div>
     
     @include('includes.scripts')
     

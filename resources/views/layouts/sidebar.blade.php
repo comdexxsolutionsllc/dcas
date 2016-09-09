@@ -5,33 +5,28 @@
     </head>
     <body>
 
-        <div id="wrapper">
+        <div class="doccontainer">
 
-            <header class="row">
+            <header>
                 @include('includes.header')
             </header>
 
-            <div id="main" class="row">
+            <main>
 
                 <!-- sidebar content -->
-                <div id="sidebar" class="col-md-4">
                     @include('includes.sidebar')
-                </div>
-
                 <!-- main content -->
-                <div id="content" class="col-md-8">
                     @yield('content')
-                </div>
 
-            </div>
+            </main>
 
             <footer class="page-footer">
                 @include('includes.footer')
             </footer>
-
-            @include('includes.scripts')
-
+        
         </div>
+        
+        @include('includes.scripts')
 
     </body>
 </html>
