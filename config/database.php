@@ -81,7 +81,7 @@ return [
         
         'testing' => [
             'driver' => 'sqlite',
-            'database' => 'database/testing.sql',
+            'database' => 'database/testing.sqlite',
             'prefix' => '',
         ],
 
