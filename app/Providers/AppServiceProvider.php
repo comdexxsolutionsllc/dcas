@@ -13,7 +13,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        /**
+         * Variables available to all views
+         */
+        view()->share('signedIn', auth()->check());
+        view()->share('user', auth()->user() ?: new \App\NullUser());
     }
 
     /**
