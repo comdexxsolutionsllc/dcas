@@ -76,4 +76,21 @@ class RouteServiceProvider extends ServiceProvider
             require base_path('routes/api.php');
         });
     }
+ 
+    /**
+     * Define the "domain" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapDomainRoutes()
+    {
+        Route::group([
+            'middleware' => 'domain.verify',
+            'namespace' => $this->namespace,
+        ], function ($router) {
+            require base_path('routes/domain.php');
+        });   
+    }
 }
