@@ -11,9 +11,7 @@ class AccessLevel extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'access_level',
-    ];
+    protected $fillable = ['name', 'access_level'];
 
     /**
      * The attributes that should be hidden for arrays.

@@ -186,6 +186,11 @@ return [
          * Vendor Service Providers...
          */
         CrudGenerator\CrudGeneratorServiceProvider::class,
+        
+        /*
+         * DCAS Specific Service Providers...
+         */
+        App\Providers\ViewServiceProvider::class,
 
     ],
 

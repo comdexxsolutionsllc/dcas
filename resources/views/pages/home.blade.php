@@ -1,6 +1,42 @@
 @extends('layouts.sidebar')
 @section('content')
+
     <div class="primary">
+
+        <div style="width:50%">
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+                            <label for="disabled">Disabled</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed congue sem. Vestibulum sapien ipsum, lacinia elementum auctor in, euismod eu purus. Quisque tristique, velit at auctor tempor, lorem magna faucibus turpis, quis rhoncus diam nisi id leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean venenatis magna eu consequat pretium. Pellentesque arcu tellus, vestibulum non ligula quis, viverra commodo sapien. Etiam felis felis, aliquet quis molestie vel, varius vel velit. Sed auctor semper metus sed lacinia. Phasellus non volutpat risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
 
@@ -13,4 +49,5 @@
     <p>Sed interdum commodo laoreet. Nunc ac pellentesque turpis. Ut mollis luctus lacus id luctus. Aliquam aliquet ante malesuada, bibendum lorem nec, posuere velit. Donec mattis accumsan ligula, vel tincidunt turpis imperdiet non. Ut placerat urna vitae quam pulvinar posuere. Maecenas maximus libero quis tellus gravida lacinia. Cras rutrum neque lectus, quis molestie urna ultricies vel. Curabitur at mattis metus, vitae vehicula turpis. Integer consectetur, ex in placerat lacinia, ex risus egestas ex, eu volutpat velit quam quis sapien. Suspendisse fringilla libero ac sapien ultricies, vitae tristique purus ornare.</p>
 
     </div>
+
 @stop

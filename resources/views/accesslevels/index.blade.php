@@ -32,6 +32,9 @@
     </div>
 </div>
 
+<debug>
+    {{{ dd($user) or 'user object not set' }}}
+</debug>
 
 
 
