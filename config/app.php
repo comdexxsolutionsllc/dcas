@@ -186,6 +186,7 @@ return [
          * Vendor Service Providers...
          */
         CrudGenerator\CrudGeneratorServiceProvider::class,
+        Spatie\Fractal\FractalServiceProvider::class,
         
         /*
          * DCAS Specific Service Providers...
@@ -239,6 +240,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Fractal' => Spatie\Fractal\FractalFacade::class,
     ],
 
 ];

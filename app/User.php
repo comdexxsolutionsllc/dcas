@@ -7,9 +7,12 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Scout\Searchable;
 
-class User extends Authenticatable
-{
-    use HasApiTokens, Notifiable;
+class User extends Authenticatable {
+
+    use HasApiTokens,
+        Notifiable;
+
+    public $timestamps = true;
 
     /**
      * The attributes that are mass assignable.
@@ -28,4 +31,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function machines() {
+        return $this->hasMany('Machine', 'user_id');
+    }
+
+    public function tickets() {
+        return $this->hasMany('Ticket', 'user_id');
+    }
+
 }
