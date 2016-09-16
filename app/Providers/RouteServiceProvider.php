@@ -15,6 +15,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     protected $namespace = 'App\Http\Controllers';
+    protected $dcasNamespace = 'DCASDomain\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -38,6 +39,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapWebRoutes();
 
         $this->mapApiRoutes();
+        
+        $this->mapItDeskRoutes();
 
         //
     }
@@ -87,10 +90,27 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapDomainRoutes()
     {
         Route::group([
-            'middleware' => 'domain.verify',
+            'middleware' => 'web',
             'namespace' => $this->namespace,
         ], function ($router) {
             require base_path('routes/domain.php');
+        });   
+    }
+    
+    /**
+     * Define the "it-desk" model routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapItDeskRoutes()
+    {
+        Route::group([
+            'middleware' => 'web',
+            'namespace' => $this->dcasNamespace,
+        ], function ($router) {
+            require base_path('routes/it-desk.module.php');
         });   
     }
 }
