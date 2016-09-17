@@ -107,6 +107,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapItDeskRoutes()
     {
         Route::group([
+            'prefix' => 'supportdesk',
             'middleware' => 'web',
             'namespace' => $this->dcasNamespace,
         ], function ($router) {

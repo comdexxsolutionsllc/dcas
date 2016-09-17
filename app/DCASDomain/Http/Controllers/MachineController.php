@@ -2,6 +2,9 @@
 
 namespace DCASDomain\Http\Controllers;
 
+use DCASDomain\Models\Machine;
+use DCASDomain\Transformers\MachineTransformer;
+
 class MachineController extends Controller {
 
     /**
@@ -10,13 +13,13 @@ class MachineController extends Controller {
      * @return Response
      */
     public function index() {
-        return response()->json(
-                        ['data' =>
-                            [
-                                'internal_error' => 'You haven\'t created a view yet you dummy!'
-                            ]
-                        ]
-        );
+        $machines = Machine::all();
+        $epochtime = \Carbon\Carbon::now()->timestamp;
+        $locale = \Carbon\Carbon::now()->tzName;
+
+        return \Fractal::collection($machines)->transformWith(new MachineTransformer())
+                        ->addMeta(['server_timestamp' => $epochtime, 'server_locale' => $locale])
+                        ->toArray();
     }
 
     /**

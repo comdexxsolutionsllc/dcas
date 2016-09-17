@@ -21,3 +21,17 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+//			$table->integer('type_id');
+//			$table->integer('user_id');
+//			$table->integer('location_id')->nullable();
+//			$table->string('machine_name', 30);
+
+$factory->define(DCASDomain\Models\Machine::class, function (Faker\Generator $faker) {
+    return [
+        'type_id' => $faker->numberBetween(0, 25),
+        'user_id' => $faker->numberBetween(0, 25),
+        'location_id' => $faker->numberBetween(0, 25),
+        'machine_name' => str_random(25),
+    ];
+});
