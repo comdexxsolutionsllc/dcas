@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Response as IlluminateResponse;
 class MachineController extends Controller {
 
     protected $machineTransformer, $meta, $request;
-    private $epochtime, $locale;
 
     /**
      * Constructor
@@ -27,7 +26,19 @@ class MachineController extends Controller {
      * @return Response
      */
     public function index() {
-        $machines = Machine::all();
+        $this->limit = Input::get('limit', '25') ? : 25;
+
+        parent::enforceLimit();
+
+        $machines = Machine::paginate($this->limit);
+
+//        $machines = array_merge($machines, ['paginator' => [
+////                'total_count' => $machines->total(),
+////                'total_pages' => ceil($machines->total() / $machines->perPage()),
+//                'current_page' => $machines->currentPage(),
+//                'limit' => $machines->perPage()
+//        ]]);
+
 
         return \Fractal::collection($machines)->transformWith($this->machineTransformer)
                         ->addMeta($this->addMeta())->toArray();
@@ -39,7 +50,7 @@ class MachineController extends Controller {
      * @return Response
      */
     public function create() {
-        return $this->NotImplemented();
+        return parent::NotImplemented();
     }
 
     /**
@@ -48,7 +59,7 @@ class MachineController extends Controller {
      * @return Response
      */
     public function store() {
-        return $this->NotImplemented();
+        return parent::NotImplemented();
     }
 
     /**
@@ -58,7 +69,7 @@ class MachineController extends Controller {
      * @return Response
      */
     public function show($id) {
-        return $this->NotImplemented();
+        return parent::NotImplemented();
     }
 
     /**
@@ -68,7 +79,7 @@ class MachineController extends Controller {
      * @return Response
      */
     public function edit($id) {
-        return $this->NotImplemented();
+        return parent::NotImplemented();
     }
 
     /**
@@ -78,7 +89,7 @@ class MachineController extends Controller {
      * @return Response
      */
     public function update($id) {
-        return $this->NotImplemented();
+        return parent::NotImplemented();
     }
 
     /**
@@ -88,52 +99,6 @@ class MachineController extends Controller {
      * @return Response
      */
     public function destroy($id) {
-        return $this->NotImplemented();
+        return parent::NotImplemented();
     }
-
-    /**
-     * Not Implemented Error Code.
-     * 
-     * @return JSON
-     */
-    private function NotImplemented() {
-        return response()->json(
-                        [
-                    'error_code' => IlluminateResponse::HTTP_NOT_IMPLEMENTED,
-                    'error_description' => IlluminateResponse::$statusTexts['501'],
-                    $this->addMeta()
-                        ], IlluminateResponse::HTTP_NOT_IMPLEMENTED);
-    }
-
-    /**
-     * Checks if $_Get['debug'] is set.
-     * 
-     * @return boolean
-     */
-    protected function isDebug() {
-        return (app('request')->exists('debug') &&
-                ($this->request->input('debug') == 'true' || $this->request->input('debug') == '' )) ? true : false;
-    }
-
-    /**
-     * Adds Metadata to the JSON output.
-     * 
-     * @return array
-     */
-    private function addMeta() {
-        $this->epochtime = \Carbon\Carbon::now()->timestamp;
-        $this->locale = \Carbon\Carbon::now()->tzName;
-
-        return [
-            'server' =>
-            [
-                '_name' => (string) $_SERVER['SERVER_NAME'],
-                '_timestamp' => $this->epochtime,
-                '_date' => date('Y-m-d'),
-                '_locale' => $this->locale
-            ],
-            'debug' => $this->isDebug()
-        ];
-    }
-
 }
