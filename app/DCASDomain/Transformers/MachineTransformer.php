@@ -7,6 +7,18 @@ use League\Fractal;
 
 class MachineTransformer extends \League\Fractal\TransformerAbstract {
 
+    /**
+     * List of resources possible to include
+     *
+     * @var array
+     */
+    protected $availableIncludes = [];
+
+    /**
+     * Turn this item object into a generic array
+     *
+     * @return array
+     */
     public function transform(Machine $machine) {
         return [
             'machine_id' => (int) $machine->id,
