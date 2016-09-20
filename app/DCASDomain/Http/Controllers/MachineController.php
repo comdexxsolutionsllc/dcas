@@ -6,7 +6,6 @@ use DCASDomain\Models\Machine;
 use DCASDomain\Transformers\MachineTransformer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use Symfony\Component\HttpFoundation\Response as IlluminateResponse;
 
 class MachineController extends Controller {
 
@@ -41,7 +40,7 @@ class MachineController extends Controller {
 
 
         return \Fractal::collection($machines)->transformWith($this->machineTransformer)
-                        ->addMeta($this->addMeta())->toArray();
+                        ->addMeta(parent::addMeta())->toArray();
     }
 
     /**
