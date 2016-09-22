@@ -168,6 +168,7 @@ return [
          */
         Laravel\Cashier\CashierServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
+//        Laravel\Passport\Http\Middleware\CreateFreshApiToken::class,
         Laravel\Scout\ScoutServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
 

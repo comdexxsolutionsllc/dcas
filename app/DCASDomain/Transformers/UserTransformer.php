@@ -20,6 +20,8 @@ class UserTransformer extends \League\Fractal\TransformerAbstract {
      */
     public function transform(User $user) {
         return [
+            'first_name' => (string) $user->first_name,
+            'last_name' => (string) $user->last_name,
             'username' => (string) $user->username,
             'email' => (string) $user->email,
             'register_ip' => (string) $user->register_ip,

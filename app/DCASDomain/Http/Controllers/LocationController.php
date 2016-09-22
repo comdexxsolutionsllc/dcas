@@ -2,6 +2,11 @@
 
 namespace DCASDomain\Http\Controllers;
 
+use DCASDomain\Models\Location;
+use DCASDomain\Transformers\LocationTransformer;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+
 class LocationController extends Controller {
 
     protected $locationTransformer, $meta, $request;
