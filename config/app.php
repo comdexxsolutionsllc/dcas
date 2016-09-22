@@ -188,6 +188,7 @@ return [
          */
         CrudGenerator\CrudGeneratorServiceProvider::class,
         Spatie\Fractal\FractalServiceProvider::class,
+        GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         
         /*
          * DCAS Specific Service Providers...

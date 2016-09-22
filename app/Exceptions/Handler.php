@@ -2,12 +2,13 @@
 
 namespace App\Exceptions;
 
-use DCASDomain\Exceptions\UnknownErrorException;
 use Exception;
+use Illuminate\Http\Request;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use GrahamCampbell\Exceptions\NewExceptionHandler;
 
-class Handler extends ExceptionHandler {
+class Handler extends  NewExceptionHandler {
 
     /**
      * A list of the exception types that should not be reported.
@@ -43,20 +44,21 @@ class Handler extends ExceptionHandler {
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $exception) {
-
-        if ($exception instanceof \Exception) {
-            return response()->json(
-                            [
-                        'code' => '0x0',
-                        'message' => $exception->getMessage(),
-                        'errorType' => get_class($exception),
-                        'datetime' => date('c')
-                            ], 500, [
-                        'X-API-Version' => '0.0.1a',
-                        'X-API-Documentation' => 'https://docs.hostname.tld/api/v1'
-                            ]
-            );
-        }
+//        if ($this->isHttpException($exception)) {
+//            return parent::renderHttpException($exception);
+//        } elseif (str_contains(\Request::path(), 'api')) {
+//            return response()->json(
+//                            [
+//                        'code' => '0x0',
+//                        'message' => $exception->getMessage(),
+//                        'errorType' => get_class($exception),
+//                        'datetime' => date('c')
+//                            ], 500, [
+//                        'X-API-Version' => '0.0.1a',
+//                        'X-API-Documentation' => 'https://docs.hostname.tld/api/v1'
+//                            ]
+//            );
+//        }
 
         return parent::render($request, $exception);
     }
