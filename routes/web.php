@@ -23,3 +23,7 @@ Route::get('/pages/home', function()
 {
     return View::make('pages.home');
 });
+
+Route::get('/register', function() {
+    abort(405, 'Registration has been blocked.');
+});
