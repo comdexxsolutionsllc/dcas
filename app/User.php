@@ -6,12 +6,15 @@ use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Scout\Searchable;
+use Laracasts\Presenter\PresentableTrait;
 
 class User extends Authenticatable {
 
     use HasApiTokens,
-        Notifiable;
+        Notifiable,
+        PresentableTrait;
 
+    protected $presenter = 'DCASDomain\Presenters\UserPresenter';
     public $timestamps = true;
 
     /**

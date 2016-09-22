@@ -19,7 +19,8 @@
         "kepex/laravel-crud-generator": "^0.1.4",
         "spatie/laravel-fractal": "^1.9",
         "league/fractal": "0.13.0",
-        "graham-campbell/exceptions": "^9.1"
+        "graham-campbell/exceptions": "^9.1",
+        "laracasts/presenter": "^0.2.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

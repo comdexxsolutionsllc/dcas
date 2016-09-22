@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "367cef8da9b90bba3226865eb5ae17d3",
-    "content-hash": "86561afa8b7b64d15572330c32bebd74",
+    "hash": "0de7628857331218f03ff669d04dda76",
+    "content-hash": "7d6f9bd01f273f0dd7bbe25a730c3a31",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1068,6 +1068,52 @@
             ],
             "description": "php artisan command to generate fully working crud with grid paginated server side only by having database tables",
             "time": "2016-01-08 07:51:41"
+        },
+        {
+            "name": "laracasts/presenter",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/Presenter.git",
+                "reference": "b284f3137f990efd6e95df49d254f1ccc4541e92"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/Presenter/zipball/b284f3137f990efd6e95df49d254f1ccc4541e92",
+                "reference": "b284f3137f990efd6e95df49d254f1ccc4541e92",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Laracasts\\Presenter": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Simple view presenters",
+            "keywords": [
+                "laravel",
+                "presenter",
+                "view"
+            ],
+            "time": "2014-09-13 13:18:07"
         },
         {
             "name": "laravel/cashier",
