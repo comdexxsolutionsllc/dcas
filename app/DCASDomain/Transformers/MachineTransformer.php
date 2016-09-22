@@ -3,7 +3,6 @@
 namespace DCASDomain\Transformers;
 
 use DCASDomain\Models\Machine;
-use League\Fractal;
 
 class MachineTransformer extends \League\Fractal\TransformerAbstract {
 

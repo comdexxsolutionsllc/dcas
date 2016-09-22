@@ -3,7 +3,6 @@
 namespace DCASDomain\Transformers;
 
 use App\User;
-use League\Fractal;
 
 class UserTransformer extends \League\Fractal\TransformerAbstract {
 

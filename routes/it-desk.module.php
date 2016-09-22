@@ -4,7 +4,7 @@ use DCASDomain\Http\Controllers;
 
 /*
   |--------------------------------------------------------------------------
-  | Application Routes
+  | IT Desk Module Routes
   |--------------------------------------------------------------------------
   |
   | Here is where you can register all of the routes for an application.
@@ -14,31 +14,23 @@ use DCASDomain\Http\Controllers;
  */
 
 
-/**
- * Location
- */
+/** Location */
 Route::resource('location', 'LocationController');
 Route::resource('locationgroup', 'LocationGroupController');
 
-/**
- * Machine
- */
+/** Machine */
 Route::resource('machine', 'MachineController');
 Route::resource('machinelog', 'MachineLogController');
 Route::resource('machinenotes', 'MachineNotesController');
 Route::resource('machinenoteattachments', 'MachineNoteAttachmentsController');
 Route::resource('machinetype', 'MachineTypeController');
 
-/**
- * Software
- */
+/** Software */
 Route::resource('software', 'SoftwareController');
 Route::resource('softwarecategory', 'SoftwareCategoryController');
 Route::resource('softwareinstalled', 'SoftwareInstalledController');
 
-/**
- * Ticket
- */
+/** Ticket */
 Route::resource('ticket', 'TicketController');
 Route::resource('ticketattachments', 'TicketAttachmentsController');
 Route::resource('ticketcomments', 'TicketCommentsController');
@@ -47,7 +39,5 @@ Route::resource('ticketlog', 'TicketLogController');
 Route::resource('ticketstatus', 'TicketStatusController');
 Route::resource('ticketworkers', 'TicketWorkersController');
 
-/**
- * User
- */
+/** User */
 Route::resource('user', 'UserController');

@@ -2,9 +2,9 @@
 
 namespace DCASDomain\Transformers;
 
-use DCASDomain\Models\MachineType;
+use DCASDomain\Models\Location;
 
-class MachineTypeTransformer extends \League\Fractal\TransformerAbstract {
+class LocationTransformer extends \League\Fractal\TransformerAbstract {
 
     /**
      * List of resources possible to include
@@ -18,13 +18,15 @@ class MachineTypeTransformer extends \League\Fractal\TransformerAbstract {
      *
      * @return array
      */
-    public function transform(MachineType $machinetype) {
+    public function transform(Location $location) {
         return [
-            'machine_type' => (string) $machinetype->type_name,
+            'group_id' => null,
+            'location_name' => (string) $location->location_name,
+            'location_description' => (string) $location->location_description,
             'links' => [
                 [
                     'rel' => 'self',
-                    'uri' => '/supportdesk/machinetype/' . $machinetype->id,
+                    'uri' => '/supportdesk/locations/' . $location->id,
                 ]
             ],
         ];

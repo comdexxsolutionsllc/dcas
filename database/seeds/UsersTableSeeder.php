@@ -15,11 +15,14 @@ class UsersTableSeeder extends Seeder {
 
         foreach (range(1, 500) as $index) {
             App\User::create([
+                'first_name' => $faker->firstName,
+                'last_name' => $faker->lastName,
                 'username' => $faker->userName,
                 'email' => $faker->email,
                 'password' => bcrypt('secret'),
                 'salt' => '',
                 'register_ip' => $faker->ipv4,
+                'remember_token' => null,
                 'forget_token' => null,
                 'active_token' => null
             ]);
