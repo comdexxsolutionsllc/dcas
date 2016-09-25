@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0de7628857331218f03ff669d04dda76",
-    "content-hash": "7d6f9bd01f273f0dd7bbe25a730c3a31",
+    "hash": "f2c6e02c2000f8f8a3ed47ac0b94a19c",
+    "content-hash": "0d2267d6cdcfefd8780040d505805236",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -3669,6 +3669,55 @@
                 "dump"
             ],
             "time": "2016-08-31 09:05:42"
+        },
+        {
+            "name": "tightenco/quicksand",
+            "version": "v0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tightenco/quicksand.git",
+                "reference": "756d8785df788467163718d5fec11b9757b6a275"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tightenco/quicksand/zipball/756d8785df788467163718d5fec11b9757b6a275",
+                "reference": "756d8785df788467163718d5fec11b9757b6a275",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.0.*|5.1.*|5.2.*|5.3.*"
+            },
+            "require-dev": {
+                "illuminate/database": "5.*",
+                "mockery/mockery": "^0.9.5",
+                "nesbot/carbon": "^1.21",
+                "phpunit/phpunit": "^5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tightenco\\Quicksand\\": "src"
+                },
+                "classmap": [
+                    "tests"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Benson Lee",
+                    "email": "benson@tighten.co"
+                },
+                {
+                    "name": "Matt Stauffer",
+                    "email": "matt@tighten.co"
+                }
+            ],
+            "description": "Easily schedule regular cleanup of old soft-deleted Eloquent data.",
+            "time": "2016-08-24 19:46:18"
         },
         {
             "name": "vlucas/phpdotenv",

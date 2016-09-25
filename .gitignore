@@ -4,3 +4,4 @@
 /tests/_output/*
 /vendor
 git_tag
+/_ide_helper.php

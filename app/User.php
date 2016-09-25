@@ -5,7 +5,7 @@ namespace App;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Laravel\Scout\Searchable;
+//use Laravel\Scout\Searchable;
 use Laracasts\Presenter\PresentableTrait;
 
 class User extends Authenticatable {
@@ -36,11 +36,11 @@ class User extends Authenticatable {
     ];
 
     public function machines() {
-        return $this->hasMany('Machine', 'user_id');
+        return $this->hasMany('\DCASDomain\Models\Machine', 'user_id');
     }
 
     public function tickets() {
-        return $this->hasMany('Ticket', 'user_id');
+        return $this->hasMany('\DCASDomain\Models\Ticket', 'user_id');
     }
 
 }
