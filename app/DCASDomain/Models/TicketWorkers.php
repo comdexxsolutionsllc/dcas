@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TicketWorkers extends Model {
 
-	protected $table = 'ticket_workers';
-	public $timestamps = true;
+    protected $table = 'ticket_workers';
 
-	use SoftDeletes;
+    public $timestamps = true;
 
-	protected $dates = ['deleted_at'];
+    use SoftDeletes;
+
+    protected $dates = [ 'deleted_at' ];
 
 }

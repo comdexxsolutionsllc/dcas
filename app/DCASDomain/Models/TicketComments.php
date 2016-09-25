@@ -7,16 +7,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TicketComments extends Model {
 
-	protected $table = 'ticket_comments';
-	public $timestamps = true;
+    protected $table = 'ticket_comments';
 
-	use SoftDeletes;
+    public $timestamps = true;
 
-	protected $dates = ['deleted_at'];
+    use SoftDeletes;
 
-	public function attachments()
-	{
-		return $this->hasMany('TicketCommentAttachments', 'comment_id');
-	}
+    protected $dates = [ 'deleted_at' ];
+
+
+    public function attachments()
+    {
+        return $this->hasMany('\DCASDomain\Models\TicketCommentAttachments', 'comment_id');
+    }
 
 }

@@ -7,16 +7,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class SoftwareCategory extends Model {
 
-	protected $table = 'software_category';
-	public $timestamps = true;
+    protected $table = 'software_category';
 
-	use SoftDeletes;
+    public $timestamps = true;
 
-	protected $dates = ['deleted_at'];
+    use SoftDeletes;
 
-	public function software()
-	{
-		return $this->hasMany('Software', 'category_id');
-	}
+    protected $dates = [ 'deleted_at' ];
+
+
+    public function software()
+    {
+        return $this->hasMany('\DCASDomain\Models\Software', 'category_id');
+    }
 
 }

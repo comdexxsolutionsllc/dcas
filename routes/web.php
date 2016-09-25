@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function ()
+{
     return view('welcome');
 });
 
@@ -19,12 +20,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/pages/home', function()
+Route::get('/pages/home', function ()
 {
     return View::make('pages.home');
 });
 
-Route::get('/register', function() {
+Route::get('/register', function ()
+{
     abort(405, 'Registration has been blocked.');
 });
 
@@ -38,7 +40,7 @@ Route::get('/test', function ()
     }
 
     return [
-        'user'                   => App\User::find(400)->username,
+        'user'          => App\User::find(400)->username,
         'user_machines' => $output
     ];
 });

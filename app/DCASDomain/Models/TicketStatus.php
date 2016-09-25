@@ -7,12 +7,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TicketStatus extends Model {
 
-	protected $table = 'ticket_status';
-	public $timestamps = true;
+    protected $table = 'ticket_status';
 
-	public function tickets()
-	{
-		return $this->hasMany('Ticket', 'status_id');
-	}
+    public $timestamps = true;
+
+
+    public function tickets()
+    {
+        return $this->hasMany('\DCASDomain\Models\Ticket', 'status_id');
+    }
 
 }

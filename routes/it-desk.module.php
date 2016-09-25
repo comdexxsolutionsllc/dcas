@@ -13,7 +13,6 @@ use DCASDomain\Http\Controllers;
   |
  */
 
-
 /** Location */
 Route::resource('location', 'LocationController');
 Route::resource('locationgroup', 'LocationGroupController');

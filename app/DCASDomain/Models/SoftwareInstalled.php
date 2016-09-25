@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class SoftwareInstalled extends Model {
 
-	protected $table = 'software_installed';
-	public $timestamps = true;
+    protected $table = 'software_installed';
 
-	use SoftDeletes;
+    public $timestamps = true;
 
-	protected $dates = ['deleted_at'];
+    use SoftDeletes;
+
+    protected $dates = [ 'deleted_at' ];
 
 }

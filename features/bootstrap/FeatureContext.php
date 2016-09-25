@@ -19,17 +19,18 @@ use PHPUnit_Framework_Assert as PHPUnit;
  */
 class FeatureContext extends MinkContext implements Context, SnippetAcceptingContext {
 
-    use DatabaseTransactions,
-        Migrator;
+    use DatabaseTransactions, Migrator;
+
 
     /**
      * Initializes context
      */
     public function __construct()
     {
-        
+
     }
-    
+
+
     /**
      * @Given I am on the home page
      */
@@ -37,6 +38,7 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
     {
         return $this->visit('/');
     }
+
 
     /**
      * @Then I can do something with Laravel

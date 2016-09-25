@@ -10,8 +10,5 @@ use DCASDomain\Http\Controllers\Traits\APITrait;
 
 class Controller extends BaseController {
 
-    use AuthorizesRequests,
-        DispatchesJobs,
-        ValidatesRequests,
-        APITrait;
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests, APITrait;
 }
