@@ -12,6 +12,7 @@ modules:
         - Db
         - Filesystem
         - Laravel5
+        - Asserts
     config:
         Laravel5:
             cleanup: false
