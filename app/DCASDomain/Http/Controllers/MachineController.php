@@ -11,10 +11,15 @@ class MachineController extends Controller {
 
     protected $machineTransformer, $meta, $request;
 
+
     /**
      * Constructor
+     *
+     * @param MachineTransformer $machineTransformer
+     * @param Request            $request
      */
     public function __construct(MachineTransformer $machineTransformer, Request $request) {
+        $this->middleware('auth');
         $this->machineTransformer = $machineTransformer;
         $this->request = $request;
     }
@@ -29,7 +34,7 @@ class MachineController extends Controller {
 
         parent::enforceLimit();
 
-        $machines = Machine::paginate($this->limit);
+        $machines = Machine::where('user_id', '=', 1); // TODO
 
 //        $machines = array_merge($machines, ['paginator' => [
 ////                'total_count' => $machines->total(),

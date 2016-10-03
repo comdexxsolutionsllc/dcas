@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <!--<link rel="stylesheet" href="style.css">-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+        }
+
+        .box {
+            padding: 20px;
+            border: 1px solid #e3e3e3;
+            width: 700px;
+        }
+
+        .control:not(:last-child) {
+            margin-bottom: 1em;
+        }
+
+        .control.has-addon {
+            display: flex;
+        }
+
+        .control.has-addon .control-field {
+            flex: 1;
+            border: 1px solid #e3e3e3;
+        }
+
+        .control.has-addon .control-field:focus {
+            outline: 0;
+            border: 1px solid #00b1b3;
+            border-right: none;
+        }
+
+        .control.has-addon .control-field:focus + .control-addon {
+            border: 1px solid #00b1b3;
+            border-left: none;
+            animation: fadeColor 2s;
+            animation-iteration-count: infinite;
+        }
+
+        .control.has-addon .control-addon {
+            background: #e3e3e3;
+            min-width: 25px;
+            text-align: center;
+        }
+
+        .control > * {
+            padding: .8em;
+        }
+
+        @keyframes fadeColor {
+            50% {
+                color: #026c6d;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+
+<body>
+<form class="box" autocomplete="off" method="post" action="login.html">
+    <div class="control has-addon">
+        <input type="text" class="control-field" placeholder="Username" title="Please enter your username to login."
+               id="username">
+
+        <span class="control-addon">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </span>
+    </div>
+
+    <div class="control has-addon">
+        <input type="password" class="control-field" placeholder="Password"
+               title="Please enter your password to login." id="password" onkeypress="return runScript(event)">
+
+        <span class="control-addon">
+                <i class="fa fa-key" aria-hidden="true"></i>
+            </span>
+    </div>
+</form>
+
+<script>
+    function runScript(e) {
+        if (e.keyCode === 13) {
+            var tb = document.getElementById("password");
+            eval(tb.value);
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

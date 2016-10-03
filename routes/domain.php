@@ -11,3 +11,42 @@
 |
 */
 
+/**
+ * @note This route file has to be loaded before all others.
+ */
+
+Route::group([
+    'middleware' => 'web',
+    'namespace'  => 'DCASDomain\Http\Controllers',
+    'domain'     => 'internal.sarahrenner.work'
+], function ()
+{
+    Route::get('/', function ()
+    {
+        return "Hello, ADMINISTRATOR";
+    });
+});
+
+Route::group([
+    'middleware' => 'web',
+    'namespace'  => 'DCASDomain\Http\Controllers',
+    'domain'     => 'panel.sarahrenner.work'
+], function ()
+{
+    Route::get('/', function ()
+    {
+        return "Hello, REGULAR USER";
+    });
+});
+
+Route::group([
+    'middleware' => 'web',
+    'namespace'  => 'DCASDomain\Http\Controllers',
+    'domain'     => '{username}.sarahrenner.work'
+], function ()
+{
+    Route::get('/', function ($username)
+    {
+        return "Hello, $username";
+    });
+});
