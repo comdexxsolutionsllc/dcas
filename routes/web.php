@@ -29,18 +29,3 @@ Route::get('/register', function ()
 {
     abort(405, 'Registration has been blocked.');
 });
-
-Route::get('/test', function ()
-{
-    $output = [];
-
-    foreach (App\User::find(400)->machines as $machine)
-    {
-        $output[] .= $machine['machine_name'];
-    }
-
-    return [
-        'user'          => App\User::find(400)->username,
-        'user_machines' => $output
-    ];
-});
