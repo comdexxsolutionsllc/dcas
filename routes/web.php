@@ -29,3 +29,11 @@ Route::get('/register', function ()
 {
     abort(405, 'Registration has been blocked.');
 });
+
+Route::get('/users-test', function ()
+{
+    \Cache::remember('users.all', 60 * 60, function ()
+    {
+        return App\User::all();
+    });
+});

@@ -8,6 +8,7 @@
     "vue-resource": "~0.1.17",
     "vue-router": "~0.7.7",
     "materialize": "^0.97.7",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "underscore": "^1.8.3"
   }
 }
