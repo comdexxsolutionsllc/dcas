@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "626acd571f04124737f535e200cfb421",
-    "content-hash": "890c4afb1c1997f03382042830721515",
+    "hash": "002b845cccfa5ecdbddde7eea65b4785",
+    "content-hash": "94fee683c9ba95b798bcb70ddb46f8fa",
     "packages": [
         {
             "name": "behat/gherkin",
@@ -1320,6 +1320,49 @@
             "time": "2016-09-24 22:16:12"
         },
         {
+            "name": "laracasts/flash",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/flash.git",
+                "reference": "03eec812fd6ae948664ff51b4320785f6d15ee5d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/flash/zipball/03eec812fd6ae948664ff51b4320785f6d15ee5d",
+                "reference": "03eec812fd6ae948664ff51b4320785f6d15ee5d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Laracasts\\Flash": "src/"
+                },
+                "files": [
+                    "src/Laracasts/Flash/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Easy flash notifications",
+            "time": "2016-07-11 20:46:02"
+        },
+        {
             "name": "laracasts/presenter",
             "version": "0.2.1",
             "source": {
@@ -2030,16 +2073,16 @@
         },
         {
             "name": "league/fractal",
-            "version": "0.13.0",
+            "version": "0.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/fractal.git",
-                "reference": "3caeefbad51bce7a06947321938128512f42346c"
+                "reference": "56ad8933fbb40328ca3321c84143b2c16186eebf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/3caeefbad51bce7a06947321938128512f42346c",
-                "reference": "3caeefbad51bce7a06947321938128512f42346c",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/56ad8933fbb40328ca3321c84143b2c16186eebf",
+                "reference": "56ad8933fbb40328ca3321c84143b2c16186eebf",
                 "shasum": ""
             },
             "require": {
@@ -2089,7 +2132,7 @@
                 "league",
                 "rest"
             ],
-            "time": "2015-10-07 14:48:58"
+            "time": "2016-07-21 09:56:14"
         },
         {
             "name": "league/oauth1-client",
@@ -4124,34 +4167,36 @@
         },
         {
             "name": "spatie/laravel-fractal",
-            "version": "1.9.1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-fractal.git",
-                "reference": "a7d981c9063916cffc06aea06333127c3296a177"
+                "reference": "9533f0ebabb26922e4bb3a9e9dc097c41162905f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/a7d981c9063916cffc06aea06333127c3296a177",
-                "reference": "a7d981c9063916cffc06aea06333127c3296a177",
+                "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/9533f0ebabb26922e4bb3a9e9dc097c41162905f",
+                "reference": "9533f0ebabb26922e4bb3a9e9dc097c41162905f",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "~5.1.0|~5.2.0|~5.3.0",
-                "league/fractal": "^0.13.0",
-                "php": ">=5.5.0"
+                "league/fractal": "^0.14.0",
+                "php": "^5.6|^7.0"
             },
             "require-dev": {
-                "orchestra/database": "3.3.x-dev",
-                "orchestra/testbench": "3.3.x-dev",
-                "phpunit/phpunit": "^4.0",
+                "orchestra/testbench": "3.2.*|3.3.*",
+                "phpunit/phpunit": "^5.5",
                 "scrutinizer/ocular": "^1.1"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "Spatie\\Fractal\\": "src"
-                }
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -4165,7 +4210,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "A Fractal service provider for Laravel 5",
+            "description": "A Fractal service provider for Laravel",
             "homepage": "https://github.com/spatie/laravel-fractal",
             "keywords": [
                 "api",
@@ -4176,7 +4221,7 @@
                 "spatie",
                 "transform"
             ],
-            "time": "2016-08-23 16:11:39"
+            "time": "2016-09-27 09:18:36"
         },
         {
             "name": "stripe/stripe-php",

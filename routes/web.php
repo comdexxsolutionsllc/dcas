@@ -30,10 +30,24 @@ Route::get('/register', function ()
     abort(405, 'Registration has been blocked.');
 });
 
+Route::get('/users/{id}/impersonate', '\DCASDomain\Http\Controllers\UserController@impersonate');
+Route::get('/users/stop', '\DCASDomain\Http\Controllers\UserController@stopImpersonate');
+
 Route::get('/users-test', function ()
 {
-    \Cache::remember('users.all', 60 * 60, function ()
+    return \Cache::remember('users.all.transform', 60 * 60, function ()
     {
-        return App\User::all();
+        return \Fractal::collection(App\User::all())->transformWith(new DCASDomain\Transformers\UserTransformer)->toArray();
     });
+});
+
+Route::group([ 'middleware' => 'impersonate' ], function ()
+{
+    //Route::get('test_impersonate', function ()
+    //{
+    //    return [
+    //        'AuthUser'          => Auth::user(),
+    //        'AuthImpersonating' => Auth::user()->isImpersonating()
+    //    ];
+    //});
 });

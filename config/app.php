@@ -190,6 +190,7 @@ return [
         Spatie\Fractal\FractalServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         Tightenco\Quicksand\QuicksandServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
         
         /*
          * DCAS Specific Service Providers...
