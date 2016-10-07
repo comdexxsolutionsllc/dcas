@@ -24,7 +24,8 @@
         "tightenco/quicksand": "^0.2.1",
         "codeception/codeception": "*",
         "predis/predis": "^1.1",
-        "laracasts/flash": "^2.0"
+        "laracasts/flash": "^2.0",
+        "mpociot/laravel-apidoc-generator": "^1.6"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

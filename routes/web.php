@@ -1,5 +1,7 @@
 <?php
 
+use DCASDomain\Enumerations\Time;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +37,7 @@ Route::get('/users/stop', '\DCASDomain\Http\Controllers\UserController@stopImper
 
 Route::get('/users-test', function ()
 {
-    return \Cache::remember('users.all.transform', 60 * 60, function ()
+    return \Cache::remember('users.all.transform', Time::minute, function ()
     {
         return \Fractal::collection(App\User::all())->transformWith(new DCASDomain\Transformers\UserTransformer)->toArray();
     });

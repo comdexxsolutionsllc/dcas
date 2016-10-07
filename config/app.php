@@ -168,7 +168,6 @@ return [
          */
         Laravel\Cashier\CashierServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
-//        Laravel\Passport\Http\Middleware\CreateFreshApiToken::class,
         Laravel\Scout\ScoutServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
 
@@ -187,11 +186,12 @@ return [
          * Vendor Service Providers...
          */
         CrudGenerator\CrudGeneratorServiceProvider::class,
-        Spatie\Fractal\FractalServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
-        Tightenco\Quicksand\QuicksandServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
-        
+        Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
+        Spatie\Fractal\FractalServiceProvider::class,
+        Tightenco\Quicksand\QuicksandServiceProvider::class,
+
         /*
          * DCAS Specific Service Providers...
          */

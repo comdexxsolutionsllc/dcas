@@ -4,17 +4,33 @@ namespace DCASDomain\Exceptions;
 
 abstract class AbstractException extends \Exception {
 
+    /**
+     * @var integer
+     */
     protected $id;
 
+    /**
+     * @var string
+     */
     protected $details;
 
 
+    /**
+     * AbstractException constructor.
+     *
+     * @param string $message
+     */
     public function __construct($message)
     {
         parent::__construct($message);
     }
 
 
+    /**
+     * @param array $args
+     *
+     * @return string
+     */
     protected function create(array $args)
     {
         $this->id = array_shift($args);
@@ -25,6 +41,11 @@ abstract class AbstractException extends \Exception {
     }
 
 
+    /**
+     * @param $id
+     *
+     * @return mixed
+     */
     private function errors($id)
     {
         $data = [
