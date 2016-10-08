@@ -18,35 +18,11 @@
 //Route::group([
 //    'middleware' => 'web',
 //    'namespace'  => 'DCASDomain\Http\Controllers',
-//    'domain'     => 'internal.sarahrenner.work'
+//    'domain'     => '{username}.sarahrenner.work'
 //], function ()
 //{
-//    Route::get('/', function ()
+//    Route::get('/', function ($username)
 //    {
-//        return "Hello, ADMINISTRATOR";
+//        return "Hello, $username";
 //    });
 //});
-//
-//Route::group([
-//    'middleware' => 'web',
-//    'namespace'  => 'DCASDomain\Http\Controllers',
-//    'domain'     => 'panel.sarahrenner.work'
-//], function ()
-//{
-//    Route::get('/', function ()
-//    {
-//        return "Hello, REGULAR USER";
-//    });
-//});
-
-Route::group([
-    'middleware' => 'web',
-    'namespace'  => 'DCASDomain\Http\Controllers',
-    'domain'     => '{username}.sarahrenner.work'
-], function ()
-{
-    Route::get('/', function ($username)
-    {
-        return "Hello, $username";
-    });
-});

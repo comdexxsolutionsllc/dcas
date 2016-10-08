@@ -37,7 +37,7 @@ class RouteServiceProvider extends ServiceProvider {
      */
     public function map()
     {
-        $this->mapDomainRoutes();
+        //$this->mapDomainRoutes();
 
         $this->mapWebRoutes();
 
@@ -61,7 +61,7 @@ class RouteServiceProvider extends ServiceProvider {
             'namespace'  => $this->namespace,
         ], function ($router)
         {
-            require base_path('routes/web.php');
+            //require base_path('routes/web.php');
         });
     }
 
@@ -88,6 +88,6 @@ class RouteServiceProvider extends ServiceProvider {
      */
     protected function mapDomainRoutes()
     {
-        require base_path('routes/domain.php');
+        //require base_path('routes/domain.php');
     }
 }

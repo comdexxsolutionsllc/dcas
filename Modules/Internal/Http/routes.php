@@ -1,12 +1,12 @@
 <?php
 
 Route::group([
-    'prefix'     => 'internal',
+    'domain'     => 'internal.sarahrenner.work',
     'middleware' => 'web',
-    'namespace'  => 'Modules\Internal\Http\Controllers',
+    'namespace'  => 'Modules\Internal\Http\Controllers'
 ], function ()
 {
-    //Route::get('/', 'InternalController@index');
+    Route::get('/', 'InternalController@index');
 
     /** Location */
     Route::resource('location', 'LocationController');
