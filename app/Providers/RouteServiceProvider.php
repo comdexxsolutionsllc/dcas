@@ -5,8 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
-class RouteServiceProvider extends ServiceProvider
-{
+class RouteServiceProvider extends ServiceProvider {
+
     /**
      * This namespace is applied to your controller routes.
      *
@@ -15,7 +15,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     protected $namespace = 'App\Http\Controllers';
-    protected $dcasNamespace = 'DCASDomain\Http\Controllers';
+
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -29,6 +29,7 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
     }
 
+
     /**
      * Define the routes for the application.
      *
@@ -40,12 +41,11 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        $this->mapApiRoutes();
-        
-        $this->mapItDeskRoutes();
+        //$this->mapApiRoutes();
 
         //
     }
+
 
     /**
      * Define the "web" routes for the application.
@@ -58,11 +58,13 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::group([
             'middleware' => 'web',
-            'namespace' => $this->namespace,
-        ], function ($router) {
+            'namespace'  => $this->namespace,
+        ], function ($router)
+        {
             require base_path('routes/web.php');
         });
     }
+
 
     /**
      * Define the "api" routes for the application.
@@ -73,15 +75,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        Route::group([
-            'middleware' => 'api',
-            'namespace' => $this->namespace,
-            'prefix' => 'api',
-        ], function ($router) {
-            require base_path('routes/api.php');
-        });
+        // Mapped to another module at Modules/Api
     }
- 
+
+
     /**
      * Define the "domain" routes for the application.
      *
@@ -92,23 +89,5 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapDomainRoutes()
     {
         require base_path('routes/domain.php');
-    }
-    
-    /**
-     * Define the "it-desk" model routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapItDeskRoutes()
-    {
-        Route::group([
-            'prefix' => 'supportdesk',
-            'middleware' => 'web',
-            'namespace' => $this->dcasNamespace,
-        ], function ($router) {
-            require base_path('routes/it-desk.module.php');
-        });   
     }
 }

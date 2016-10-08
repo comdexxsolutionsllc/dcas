@@ -1,7 +1,5 @@
 <?php
 
-use DCASDomain\Enumerations\Time;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,13 +33,13 @@ Route::get('/register', function ()
 Route::get('/users/{id}/impersonate', '\DCASDomain\Http\Controllers\UserController@impersonate');
 Route::get('/users/stop', '\DCASDomain\Http\Controllers\UserController@stopImpersonate');
 
-Route::get('/users-test', function ()
-{
-    return \Cache::remember('users.all.transform', Time::minute, function ()
-    {
-        return \Fractal::collection(App\User::all())->transformWith(new DCASDomain\Transformers\UserTransformer)->toArray();
-    });
-});
+//Route::get('/users-test', function ()
+//{
+//    return \Cache::remember('users.all.transform', Time::minute, function ()
+//    {
+//        return \Fractal::collection(App\User::all())->transformWith(new DCASDomain\Transformers\UserTransformer)->toArray();
+//    });
+//});
 
 Route::group([ 'middleware' => 'impersonate' ], function ()
 {
