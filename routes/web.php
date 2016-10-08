@@ -1,5 +1,5 @@
 <?php
-
+Auth::loginUsingId(1);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,8 +41,8 @@ Route::get('/users/stop', '\DCASDomain\Http\Controllers\UserController@stopImper
 //    });
 //});
 
-Route::group([ 'middleware' => 'impersonate' ], function ()
-{
+//Route::group([ 'middleware' => 'impersonate' ], function ()
+//{
     //Route::get('test_impersonate', function ()
     //{
     //    return [
@@ -50,4 +50,4 @@ Route::group([ 'middleware' => 'impersonate' ], function ()
     //        'AuthImpersonating' => Auth::user()->isImpersonating()
     //    ];
     //});
-});
+//});

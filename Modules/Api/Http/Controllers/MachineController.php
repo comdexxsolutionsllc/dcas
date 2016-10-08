@@ -2,6 +2,7 @@
 
 namespace Modules\Api\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use DCASDomain\Models\Machine;
 use Modules\Api\Transformers\MachineTransformer;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class MachineController extends Controller {
      * @param Request            $request
      */
     public function __construct(MachineTransformer $machineTransformer, Request $request) {
-        $this->middleware('auth');
+        //$this->middleware('auth');
         $this->machineTransformer = $machineTransformer;
         $this->request = $request;
     }

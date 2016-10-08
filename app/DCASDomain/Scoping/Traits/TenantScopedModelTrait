@@ -1,0 +1,29 @@
+<?php
+namespace DCASDomain\Scoping\Traits;
+
+use App;
+use DCASDomain\Scoping\TenantScope;
+
+trait TenantScopedModelTrait {
+
+    public static function bootTenantScopedModelTrait()
+    {
+        $tenantScope = App::make('DCASDomain\Scoping\TenantScope');
+
+        // Add Global scope that will handle all operations except create()
+        static::addGlobalScope($tenantScope);
+    }
+
+
+    public static function allTenants()
+    {
+        return with(new static())->newQueryWithoutScope(new TenantScope());
+    }
+
+
+    public function getTenantWhereClause($tenantColumn, $tenantId)
+    {
+        return "{$this->getTable()}.{$tenantColumn} = '{$tenantId}''";
+    }
+
+}

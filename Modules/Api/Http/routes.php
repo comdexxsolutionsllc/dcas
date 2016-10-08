@@ -10,4 +10,6 @@ Route::group(['domain' => 'api.sarahrenner.work', 'middleware' => 'api', 'prefix
     {
         return $request->user();
     })->middleware('auth:api');
+
+    Route::resource('machine', 'MachineController');
 });
