@@ -189,6 +189,7 @@ return [
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
+        Nwidart\Modules\LaravelModulesServiceProvider::class,
         Spatie\Fractal\FractalServiceProvider::class,
         Tightenco\Quicksand\QuicksandServiceProvider::class,
 
@@ -244,7 +245,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
         'Fractal' => Spatie\Fractal\FractalFacade::class,
+        'Module' => Nwidart\Modules\Facades\Module::class,
     ],
 
 ];
