@@ -1,5 +1,6 @@
 {
-  "name": "My Laravel Application",
+  "name": "fiberhopllc_dcas",
+  "description": "FiberHop LLC - DCAS - Datacenter Automation Suite",
   "dependencies": {
     "font-awesome": "~4.2.0",
     "foundation": "zurb/bower-foundation#~5.5.1",
