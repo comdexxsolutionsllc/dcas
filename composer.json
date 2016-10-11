@@ -26,7 +26,8 @@
         "mpociot/laravel-apidoc-generator": "^1.6",
         "laracasts/flash": "^2.0",
         "predis/predis": "^1.1",
-        "nwidart/laravel-modules": "^1.13"
+        "nwidart/laravel-modules": "^1.13",
+        "mirzabusatlic/laravel-schedule-monitor": "^1.01"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

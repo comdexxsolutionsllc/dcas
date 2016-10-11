@@ -4,8 +4,10 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Busatlic\ScheduleMonitor\MonitorsSchedule;
 
 class Kernel extends ConsoleKernel {
+    use MonitorsSchedule;
 
     /**
      * The Artisan commands provided by your application.
@@ -29,6 +31,8 @@ class Kernel extends ConsoleKernel {
         //          ->hourly();
 
         // $schedule->command('quicksand:run')->daily();
+
+        // $this->monitor($schedule);
     }
 
 

@@ -51,3 +51,7 @@ Route::get('/users/stop', '\DCASDomain\Http\Controllers\UserController@stopImper
     //    ];
     //});
 //});
+
+Route::get('/testing', function() {
+    return view('testing.test');
+});

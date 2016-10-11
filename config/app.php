@@ -185,6 +185,7 @@ return [
         /*
          * Vendor Service Providers...
          */
+        Busatlic\ScheduleMonitor\ScheduleMonitorServiceProvider::class,
         CrudGenerator\CrudGeneratorServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,

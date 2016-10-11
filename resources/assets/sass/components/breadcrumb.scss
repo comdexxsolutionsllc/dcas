@@ -1,0 +1,11 @@
+@include component(breadcrumbC) {
+  background: #e3e3e3;
+
+  li {
+    display: inline-block;
+  }
+
+  & + li:before {
+    content: "||";
+  }
+}

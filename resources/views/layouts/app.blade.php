@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html id="csstyle">
 <html lang="en">
 <head>
     <meta charset="utf-8">
