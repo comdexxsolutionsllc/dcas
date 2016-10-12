@@ -191,6 +191,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
         Nwidart\Modules\LaravelModulesServiceProvider::class,
+        PulkitJalan\GeoIP\GeoIPServiceProvider::class,
         Spatie\Fractal\FractalServiceProvider::class,
         Tightenco\Quicksand\QuicksandServiceProvider::class,
 
@@ -248,6 +249,7 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
         'Fractal' => Spatie\Fractal\FractalFacade::class,
+        'GeoIP' => PulkitJalan\GeoIP\Facades\GeoIP::class,
         'Module' => Nwidart\Modules\Facades\Module::class,
     ],
 
