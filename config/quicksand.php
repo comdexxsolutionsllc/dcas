@@ -2,10 +2,10 @@
 
 return [
     // Days before deleting soft deleted content
-    'days' => 90,
+    'days'   => 90,
 
     // Whether to log the number of soft deleted records per model
-    'log' => true,
+    'log'    => true,
 
     // List of models to run Quicksand on
     'models' => [

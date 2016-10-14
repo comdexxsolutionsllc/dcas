@@ -28,7 +28,9 @@
         "predis/predis": "^1.1",
         "nwidart/laravel-modules": "^1.13",
         "mirzabusatlic/laravel-schedule-monitor": "^1.01",
-        "pulkitjalan/geoip": "2.4.*"
+        "pulkitjalan/geoip": "2.4.*",
+        "jrm2k6/cloudder": "0.3.*",
+        "algolia/algoliasearch-client-php": "^1.10"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

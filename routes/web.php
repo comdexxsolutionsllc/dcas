@@ -117,3 +117,14 @@ Route::get('/testing', function ()
 //{
 //    return (new PulkitJalan\GeoIP\GeoIP())->getRaw();
 //});
+
+//Route::group([
+//    'prefix' => 'sitemap'
+//], function ()
+//{
+//    Route::get('/', 'SitemapController@index');
+//    Route::get('/posts', 'SitemapController@posts');
+//    Route::get('/categories', 'SitemapController@categories');
+//    Route::get('/podcasts', 'SitemapController@podcasts');
+//    Route::get('/sitemap.xml', 'SitemapController@index');
+//});
