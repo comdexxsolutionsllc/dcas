@@ -7,31 +7,43 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Machine extends Model {
 
-	protected $table = 'machines';
-	public $timestamps = true;
+    protected $table = 'machines';
 
-	use SoftDeletes;
+    public $timestamps = true;
 
-	protected $dates = ['deleted_at'];
+    use SoftDeletes;
 
-	public function machine_log()
-	{
-		return $this->hasMany('\DCASDomain\Models\MachineLog', 'machine_id');
-	}
+    protected $dates = [ 'deleted_at' ];
 
-	public function software()
-	{
-		return $this->hasMany('\DCASDomain\Models\SoftwareInstalled', 'machine_id');
-	}
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [ 'type_id', 'user_id', 'location_id', 'machine_name' ];
 
-	public function machine_notes()
-	{
-		return $this->hasMany('\DCASDomain\Models\MachineNotes', 'machine_id');
-	}
 
-	public function location()
-	{
-		return $this->hasOne('\DCASDomain\Models\Location', 'id', 'location_id');
-	}
+    public function machine_log()
+    {
+        return $this->hasMany('\DCASDomain\Models\MachineLog', 'machine_id');
+    }
+
+
+    public function software()
+    {
+        return $this->hasMany('\DCASDomain\Models\SoftwareInstalled', 'machine_id');
+    }
+
+
+    public function machine_notes()
+    {
+        return $this->hasMany('\DCASDomain\Models\MachineNotes', 'machine_id');
+    }
+
+
+    public function location()
+    {
+        return $this->hasOne('\DCASDomain\Models\Location', 'id', 'location_id');
+    }
 
 }

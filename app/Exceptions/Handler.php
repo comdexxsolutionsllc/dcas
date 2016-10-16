@@ -5,7 +5,6 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use GrahamCampbell\Exceptions\NewExceptionHandler;
 
 class Handler extends ExceptionHandler {
 
@@ -49,22 +48,6 @@ class Handler extends ExceptionHandler {
      */
     public function render($request, Exception $exception)
     {
-//        if ($this->isHttpException($exception)) {
-//            return parent::renderHttpException($exception);
-//        } elseif (str_contains(\Request::path(), 'api')) {
-//            return response()->json(
-//                            [
-//                        'code' => '0x0',
-//                        'message' => $exception->getMessage(),
-//                        'errorType' => get_class($exception),
-//                        'datetime' => date('c')
-//                            ], 500, [
-//                        'X-API-Version' => '0.0.1a',
-//                        'X-API-Documentation' => 'https://docs.hostname.tld/api/v1'
-//                            ]
-//            );
-//        }
-
         return parent::render($request, $exception);
     }
 

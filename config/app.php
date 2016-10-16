@@ -192,9 +192,11 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
         Nwidart\Modules\LaravelModulesServiceProvider::class,
+        PrettyRoutes\ServiceProvider::class,
         PulkitJalan\GeoIP\GeoIPServiceProvider::class,
         Spatie\Fractal\FractalServiceProvider::class,
         Tightenco\Quicksand\QuicksandServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
 
         /*
          * DCAS Specific Service Providers...
@@ -249,10 +251,11 @@ return [
         'View'         => Illuminate\Support\Facades\View::class,
         'Socialite'    => Laravel\Socialite\Facades\Socialite::class,
 
-        'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
-        'Fractal'  => Spatie\Fractal\FractalFacade::class,
-        'GeoIP'    => PulkitJalan\GeoIP\Facades\GeoIP::class,
-        'Module'   => Nwidart\Modules\Facades\Module::class,
+        'Cloudder'   => JD\Cloudder\Facades\Cloudder::class,
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
+        'Fractal'    => Spatie\Fractal\FractalFacade::class,
+        'GeoIP'      => PulkitJalan\GeoIP\Facades\GeoIP::class,
+        'Module'     => Nwidart\Modules\Facades\Module::class,
     ],
 
 ];

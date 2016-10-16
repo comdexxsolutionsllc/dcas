@@ -1,0 +1,37 @@
+{{--<div class="row">--}}
+    {{--<div id="config_values">--}}
+        {{--1. {{env('APP_ENV')}}<br/>--}}
+        {{--2. {{env('APP_KEY')}}<br/>--}}
+        {{--3. {{env('APP_DEBUG')}}<br/>--}}
+        {{--4. {{env('APP_LOG_LEVEL')}}<br/>--}}
+        {{--5. {{env('APP_URL')}}<br/>--}}
+        {{--6. {{env('CLOUDINARY_CLOUD_NAME')}}<br/>--}}
+        {{--7. {{env('CLOUDINARY_API_KEY')}}<br/>--}}
+        {{--8. {{env('CLOUDINARY_API_SECRET')}}<br/>--}}
+        {{--9. {{env('DB_CONNECTION')}}<br/>--}}
+        {{--10. {{env('DB_HOST')}}<br/>--}}
+        {{--11. {{env('DB_PORT')}}<br/>--}}
+        {{--12. {{env('DB_DATABASE')}}<br/>--}}
+        {{--13. {{env('DB_USERNAME')}}<br/>--}}
+        {{--14. {{env('DB_PASSWORD')}}<br/>--}}
+        {{--15. {{env('BROADCAST_DRIVER')}}<br/>--}}
+        {{--16. {{env('CACHE_DRIVER')}}<br/>--}}
+        {{--17. {{env('SESSION_DRIVER')}}<br/>--}}
+        {{--18. {{env('QUEUE_DRIVER')}}<br/>--}}
+        {{--19. {{env('GEOIP_DRIVER')}}<br/>--}}
+        {{--20. {{env('GEOIP_RANDOM')}}<br/>--}}
+        {{--21. {{env('GEOIP_FREEGEOIP_SECURE')}}<br/>--}}
+        {{--22. {{env('MAIL_DRIVER')}}<br/>--}}
+        {{--23. {{env('MAIL_HOST')}}<br/>--}}
+        {{--24. {{env('MAIL_USERNAME')}}<br/>--}}
+        {{--25. {{env('MAIL_PASSWORD')}}<br/>--}}
+        {{--26. {{env('REDIS_HOST')}}<br/>--}}
+        {{--27. {{env('REDIS_PASSWORD')}}<br/>--}}
+        {{--28. {{env('REDIS_PORT')}}<br/>--}}
+        {{--29. {{env('SCOUNT_DRIVER')}}<br/>--}}
+        {{--30, {{env('ALGOLIA_APP_ID')}}<br/>--}}
+        {{--31. {{env('ALGOLIA_SECRET')}}<br/>--}}
+        {{--32. {{env('STRIPE_KEY')}}<br/>--}}
+        {{--33. {{env('STRIPE_SECURE')}}--}}
+    {{--</div>--}}
+{{--</div>--}}
