@@ -32,6 +32,3 @@ Route::get('/register', function ()
 
 Route::get('/users/{id}/impersonate', '\Modules\Api\Http\Controllers\UserController@impersonate');
 Route::get('/users/stop', '\Modules\Api\Http\Controllers\UserController@stopImpersonate');
-
-Route::get('/machines/grid', 'MachinesController@grid');
-Route::resource('/machines', 'MachinesController');

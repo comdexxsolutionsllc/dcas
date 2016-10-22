@@ -187,6 +187,7 @@ return [
          */
         Busatlic\ScheduleMonitor\ScheduleMonitorServiceProvider::class,
         CrudGenerator\CrudGeneratorServiceProvider::class,
+        Evercode1\ViewMaker\ViewMakerServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         JD\Cloudder\CloudderServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,

@@ -5766,4 +5766,10 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
 /*# sourceMappingURL=app.css.map */

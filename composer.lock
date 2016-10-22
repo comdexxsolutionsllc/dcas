@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8aafcaf4262042320579b899b3e527a8",
-    "content-hash": "feb9aa1330645b1a092fa835ba08f5c9",
+    "hash": "2af3266397338ccfeed05a84f29f8058",
+    "content-hash": "563c92710e62eeb3857a6b025ce3b30b",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
-            "version": "1.10.3",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/algolia/algoliasearch-client-php.git",
-                "reference": "6d3a299bc388efeb14dd52cda7bb420d472b876d"
+                "reference": "d4f29a1fe82f3d6361a516276849bd98dd014cc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/6d3a299bc388efeb14dd52cda7bb420d472b876d",
-                "reference": "6d3a299bc388efeb14dd52cda7bb420d472b876d",
+                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/d4f29a1fe82f3d6361a516276849bd98dd014cc0",
+                "reference": "d4f29a1fe82f3d6361a516276849bd98dd014cc0",
                 "shasum": ""
             },
             "require": {
@@ -56,7 +56,7 @@
             ],
             "description": "Algolia Search API Client for PHP",
             "homepage": "https://github.com/algolia/algoliasearch-client-php",
-            "time": "2016-10-03 16:23:46"
+            "time": "2016-10-20 11:25:18"
         },
         {
             "name": "behat/gherkin",
@@ -1036,25 +1036,78 @@
             "time": "2015-10-04 16:44:32"
         },
         {
-            "name": "facebook/webdriver",
-            "version": "1.1.3",
+            "name": "evercode1/view-maker",
+            "version": "3.5.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/facebook/php-webdriver.git",
-                "reference": "b7186fb1bcfda956d237f59face250d06ef47253"
+                "url": "https://github.com/evercode1/view-maker.git",
+                "reference": "033705485894d1eb5d2f3151e679d45bb2ad0bfc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/php-webdriver/zipball/b7186fb1bcfda956d237f59face250d06ef47253",
-                "reference": "b7186fb1bcfda956d237f59face250d06ef47253",
+                "url": "https://api.github.com/repos/evercode1/view-maker/zipball/033705485894d1eb5d2f3151e679d45bb2ad0bfc",
+                "reference": "033705485894d1eb5d2f3151e679d45bb2ad0bfc",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.1",
+                "php": "5.6.*|~7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Evercode1\\ViewMaker\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bill Keck",
+                    "email": "ikon321@yahoo.com",
+                    "homepage": "https://github.com/evercode1",
+                    "role": "Developer"
+                }
+            ],
+            "description": "ViewMaker for Laravel 5.2 Artisan Command",
+            "homepage": "https://github.com/evercode1/view-maker",
+            "keywords": [
+                "Evercode1",
+                "Laravel 5.2",
+                "artisan",
+                "laravel",
+                "view-maker"
+            ],
+            "time": "2016-08-26 03:45:06"
+        },
+        {
+            "name": "facebook/webdriver",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/facebook/php-webdriver.git",
+                "reference": "af21de3ae5306a8ca0bcc02a19735dadc43e83f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/facebook/php-webdriver/zipball/af21de3ae5306a8ca0bcc02a19735dadc43e83f3",
+                "reference": "af21de3ae5306a8ca0bcc02a19735dadc43e83f3",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
-                "php": ">=5.3.19"
+                "php": "^5.5 || ~7.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^1.11",
+                "php-mock/php-mock-phpunit": "^1.1",
                 "phpunit/phpunit": "4.6.* || ~5.0",
                 "squizlabs/php_codesniffer": "^2.6"
             },
@@ -1079,7 +1132,7 @@
                 "selenium",
                 "webdriver"
             ],
-            "time": "2016-08-10 00:44:08"
+            "time": "2016-10-14 15:16:51"
         },
         {
             "name": "firebase/php-jwt",
@@ -1883,23 +1936,23 @@
         },
         {
             "name": "laravel/envoy",
-            "version": "v1.2.2",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/envoy.git",
-                "reference": "b9a0a49946d719c31910e3e1a7806bd40f635f57"
+                "reference": "ecced2a8e652ea6bd52c4bc2535d4223fe6c33b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/envoy/zipball/b9a0a49946d719c31910e3e1a7806bd40f635f57",
-                "reference": "b9a0a49946d719c31910e3e1a7806bd40f635f57",
+                "url": "https://api.github.com/repos/laravel/envoy/zipball/ecced2a8e652ea6bd52c4bc2535d4223fe6c33b7",
+                "reference": "ecced2a8e652ea6bd52c4bc2535d4223fe6c33b7",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "~4.1|~5.0",
                 "nategood/httpful": "~0.2",
-                "symfony/console": "~2.3|~3.0",
-                "symfony/process": "~2.3|~3.0"
+                "symfony/console": "~3.0",
+                "symfony/process": "~3.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.8"
@@ -1928,20 +1981,20 @@
                 "laravel",
                 "ssh"
             ],
-            "time": "2016-09-23 21:00:45"
+            "time": "2016-10-21 21:50:55"
         },
         {
             "name": "laravel/framework",
-            "version": "v5.3.18",
+            "version": "v5.3.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "9bee167d173857c25966c19afdaa66f127ca6784"
+                "reference": "f1a5bb417b3e0d1949fe84617eacd1a14d75d7f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/9bee167d173857c25966c19afdaa66f127ca6784",
-                "reference": "9bee167d173857c25966c19afdaa66f127ca6784",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f1a5bb417b3e0d1949fe84617eacd1a14d75d7f1",
+                "reference": "f1a5bb417b3e0d1949fe84617eacd1a14d75d7f1",
                 "shasum": ""
             },
             "require": {
@@ -2023,7 +2076,7 @@
                 "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (~2.0).",
                 "symfony/css-selector": "Required to use some of the crawler integration testing tools (3.1.*).",
                 "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (3.1.*).",
-                "symfony/psr-http-message-bridge": "Required to psr7 bridging features (0.2.*)."
+                "symfony/psr-http-message-bridge": "Required to use psr7 bridging features (0.2.*)."
             },
             "type": "library",
             "extra": {
@@ -2056,11 +2109,11 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-10-08 01:51:20"
+            "time": "2016-10-17 19:35:14"
         },
         {
             "name": "laravel/passport",
-            "version": "v1.0.7",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/passport.git",
@@ -2124,16 +2177,16 @@
         },
         {
             "name": "laravel/scout",
-            "version": "v1.1.7",
+            "version": "v1.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/scout.git",
-                "reference": "08241b3638c60bc858f4ee01e7c8eb01644098d7"
+                "reference": "31e07d8734d0b0c9d7311d762cef9b9f39840251"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/scout/zipball/08241b3638c60bc858f4ee01e7c8eb01644098d7",
-                "reference": "08241b3638c60bc858f4ee01e7c8eb01644098d7",
+                "url": "https://api.github.com/repos/laravel/scout/zipball/31e07d8734d0b0c9d7311d762cef9b9f39840251",
+                "reference": "31e07d8734d0b0c9d7311d762cef9b9f39840251",
                 "shasum": ""
             },
             "require": {
@@ -2183,7 +2236,7 @@
                 "laravel",
                 "search"
             ],
-            "time": "2016-10-10 21:08:11"
+            "time": "2016-10-17 21:22:21"
         },
         {
             "name": "laravel/socialite",
@@ -2403,20 +2456,20 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.28",
+            "version": "1.0.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "a9663643ff2d16d7f66ed1e0d3212c5491bc9044"
+                "reference": "1b5c4a0031697f46e779a9d1b309c2e1b24daeab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a9663643ff2d16d7f66ed1e0d3212c5491bc9044",
-                "reference": "a9663643ff2d16d7f66ed1e0d3212c5491bc9044",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/1b5c4a0031697f46e779a9d1b309c2e1b24daeab",
+                "reference": "1b5c4a0031697f46e779a9d1b309c2e1b24daeab",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": ">=5.5.9"
             },
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
@@ -2482,7 +2535,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-10-07 12:20:37"
+            "time": "2016-10-19 20:38:46"
         },
         {
             "name": "league/fractal",
@@ -3091,16 +3144,16 @@
         },
         {
             "name": "mpociot/laravel-apidoc-generator",
-            "version": "1.6.5",
+            "version": "1.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpociot/laravel-apidoc-generator.git",
-                "reference": "f76ce805fd148a312be704fbad453a132ee69a30"
+                "reference": "c1a50b523f2558cc9f58c5cfbbbf74ea1fe65f47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mpociot/laravel-apidoc-generator/zipball/f76ce805fd148a312be704fbad453a132ee69a30",
-                "reference": "f76ce805fd148a312be704fbad453a132ee69a30",
+                "url": "https://api.github.com/repos/mpociot/laravel-apidoc-generator/zipball/c1a50b523f2558cc9f58c5cfbbbf74ea1fe65f47",
+                "reference": "c1a50b523f2558cc9f58c5cfbbbf74ea1fe65f47",
                 "shasum": ""
             },
             "require": {
@@ -3140,7 +3193,7 @@
                 "documentation",
                 "laravel"
             ],
-            "time": "2016-10-06 12:43:28"
+            "time": "2016-10-19 18:45:04"
         },
         {
             "name": "mpociot/reflection-docblock",
@@ -3427,16 +3480,16 @@
         },
         {
             "name": "nwidart/laravel-modules",
-            "version": "1.13.1",
+            "version": "1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nWidart/laravel-modules.git",
-                "reference": "087ac732ec9504a6cfe0c29889e8a96dcb80f5d5"
+                "reference": "2d05b9c5ac23cb800725ba760d9a323820603d9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/087ac732ec9504a6cfe0c29889e8a96dcb80f5d5",
-                "reference": "087ac732ec9504a6cfe0c29889e8a96dcb80f5d5",
+                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/2d05b9c5ac23cb800725ba760d9a323820603d9f",
+                "reference": "2d05b9c5ac23cb800725ba760d9a323820603d9f",
                 "shasum": ""
             },
             "require": {
@@ -3477,20 +3530,20 @@
                 "nwidart",
                 "rad"
             ],
-            "time": "2016-09-09 15:53:21"
+            "time": "2016-10-19 09:27:32"
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf"
+                "reference": "c0125896dbb151380ab47e96c621741e79623beb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/088c04e2f261c33bed6ca5245491cfca69195ccf",
-                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c0125896dbb151380ab47e96c621741e79623beb",
+                "reference": "c0125896dbb151380ab47e96c621741e79623beb",
                 "shasum": ""
             },
             "require": {
@@ -3525,7 +3578,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-04-03 06:00:07"
+            "time": "2016-10-17 15:23:22"
         },
         {
             "name": "phenx/php-font-lib",
@@ -6631,7 +6684,7 @@
         },
         {
             "name": "windwalker/renderer",
-            "version": "3.1",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ventoviro/windwalker-renderer.git",
@@ -6688,7 +6741,7 @@
         },
         {
             "name": "windwalker/structure",
-            "version": "3.1",
+            "version": "3.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ventoviro/windwalker-structure.git",

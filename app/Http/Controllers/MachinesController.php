@@ -9,9 +9,10 @@ use App\Http\Controllers\Controller;
 
 use DCASDomain\Models\Machine;
 
+use Carbon\Carbon;
 use Datatables;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Redirect;
+use Input;
+use Redirect;
 
 class MachinesController extends Controller {
 
@@ -22,37 +23,133 @@ class MachinesController extends Controller {
     }
 
 
-    public function index(Request $request)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index()
     {
-        return view('machines.index', []);
+        return view('machines.index');
     }
 
 
-    public function create(Request $request)
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
     {
-        return view('machines.add', [
-            []
-        ]);
+        return view('machines.add');
     }
 
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function store(Request $request)
+    {
+        $model = Machine::create($request->all());
+
+        return redirect()->route('machines.index', [ $model ])->with('message', 'Machine created');
+    }
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function show($id)
+    {
+        $model = Machine::findOrFail($id);
+        //$model = Machine::onlyTrashed()->get();
+
+        //return $model;
+
+        return view('machines.show', compact('model'));
+    }
+
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
     public function edit($id)
     {
-        $machine = Machine::findOrFail($id);
+        $model = Machine::findOrFail($id);
 
-        return view('machines.add', [
-            'model' => $machine
-        ]);
+        return view('machines.add', compact('model'));
     }
 
 
-    public function show(Request $request, $id)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function update($id)
     {
+        //
+    }
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function destroy(Request $request, $id)
+    {
+
         $machine = Machine::findOrFail($id);
 
-        return view('machines.show', [
-            'model' => $machine
-        ]);
+        $machine->delete();
+
+        return redirect('/machines/index');
+
+    }
+
+
+    /**
+     * Display the specified resource that has been trashed.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function showWithTrashed($id)
+    {
+        $model = Machine::withTrashed()->where('id', $id)->get();
+
+        return view('machines.show', compact('model'));
+    }
+
+
+    /**
+     * Show the form for editing the specified resource that has been trashed.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function editWithTrashed($id)
+    {
+        $model = Machine::withTrashed()->where('id', $id)->get();
+
+        return view('machines.add', compact('model'));
     }
 
 
@@ -72,25 +169,11 @@ class MachinesController extends Controller {
         return Datatables::of($machines)->make();
     }
 
-
-    public function store(Request $request)
+    protected function formatDate(Request $request, Carbon $date)
     {
-        $input = Input::all();
-        Machine::create($input);
+        ($request->get('date')) ? true : false;
 
-        return Redirect::route('machines.index')->with('message', 'Machine created');
+        return $date;
     }
-
-
-    public function destroy(Request $request, $id)
-    {
-
-        $machine = Machine::findOrFail($id);
-
-        $machine->delete();
-
-        return redirect('/machines/index');
-
-    }
-
 }
+
