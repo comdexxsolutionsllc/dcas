@@ -31,6 +31,11 @@ Vue.component(
     require('./components/passport/PersonalAccessTokens.vue')
 );
 
+Vue.component(
+    'machine-grid',
+    require('./components/MachineGrid.vue')
+);
+
 const app = new Vue({
     el: 'body',
 });

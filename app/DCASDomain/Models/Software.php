@@ -15,10 +15,4 @@ class Software extends Model {
 
     protected $dates = [ 'deleted_at' ];
 
-
-    public function installed_software()
-    {
-        return $this->hasMany('\DCASDomain\Models\SoftwareInstalled', 'software_id');
-    }
-
 }

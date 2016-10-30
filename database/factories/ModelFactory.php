@@ -31,3 +31,54 @@ $factory->define(DCASDomain\Models\Machine::class, function (Faker\Generator $fa
         'machine_name' => str_random(25),
     ];
 });
+
+
+// Begin Machine Factory
+
+$factory->define(App\Machine::class, function (Faker\Generator $faker) {
+    return [
+        'machine_name' => $faker->unique()->word,
+
+    ];
+});
+
+// End Machine Factory
+
+// Begin Software Factory
+
+$factory->define(App\Software::class, function (Faker\Generator $faker) {
+    return [
+        'software_name' => $faker->unique()->word,
+
+    ];
+});
+
+// End Software Factory
+
+// Begin Ticket Factory
+
+$factory->define(App\Ticket::class, function (Faker\Generator $faker) {
+    return [
+        'ticket_name' => $faker->unique()->word,
+
+    ];
+});
+
+// End Ticket 
+
+$factory->define(DCASDomain\Models\Ticket::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' =>  $faker->randomNumber() ,
+        'status_id' =>  $faker->randomNumber() ,
+        'ticket_content' =>  $faker->text ,
+        'ticket_read' =>  $faker->boolean ,
+    ];
+});
+
+$factory->define(DCASDomain\Models\Software::class, function (Faker\Generator $faker) {
+    return [
+        'software_name' =>  $faker->word ,
+        'software_key' =>  $faker->word ,
+    ];
+});
+

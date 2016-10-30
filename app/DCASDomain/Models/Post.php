@@ -2,8 +2,8 @@
 
 namespace DCASDomain\Models;
 
-class Post extends Eloquent {
-    
-    protected $fillable = [];
-    
-}
+//class Post extends Eloquent {
+//
+//    protected $fillable = [];
+//
+//}

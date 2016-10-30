@@ -190,12 +190,16 @@ return [
         Evercode1\ViewMaker\ViewMakerServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         JD\Cloudder\CloudderServiceProvider::class,
+        Laracademy\Generators\GeneratorsServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
+        Mpociot\LaravelTestFactoryHelper\TestFactoryHelperServiceProvider::class,
         Nwidart\Modules\LaravelModulesServiceProvider::class,
+        PragmaRX\Firewall\Vendor\Laravel\ServiceProvider::class,
         PrettyRoutes\ServiceProvider::class,
         PulkitJalan\GeoIP\GeoIPServiceProvider::class,
         Spatie\Fractal\FractalServiceProvider::class,
+        Spatie\PaginateRoute\PaginateRouteServiceProvider::class,
         Tightenco\Quicksand\QuicksandServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
 
@@ -254,9 +258,11 @@ return [
 
         'Cloudder'   => JD\Cloudder\Facades\Cloudder::class,
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
+        'Firewall' => PragmaRX\Firewall\Vendor\Laravel\Facade::class,
         'Fractal'    => Spatie\Fractal\FractalFacade::class,
         'GeoIP'      => PulkitJalan\GeoIP\Facades\GeoIP::class,
         'Module'     => Nwidart\Modules\Facades\Module::class,
+        'PaginateRoute' => Spatie\PaginateRoute\PaginateRouteFacade::class
     ],
 
 ];

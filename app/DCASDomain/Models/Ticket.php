@@ -15,28 +15,4 @@ class Ticket extends Model {
 
     protected $dates = [ 'deleted_at' ];
 
-
-    public function log()
-    {
-        return $this->hasMany('\DCASDomain\Models\TicketLog', 'ticket_id');
-    }
-
-
-    public function comments()
-    {
-        return $this->hasMany('\DCASDomain\Models\TicketComments', 'ticket_id');
-    }
-
-
-    public function workers()
-    {
-        return $this->hasMany('\DCASDomain\Models\TicketWorkers', 'ticket_id');
-    }
-
-
-    public function attachments()
-    {
-        return $this->hasMany('\DCASDomain\Models\TicketAttachments', 'ticket_id');
-    }
-
 }

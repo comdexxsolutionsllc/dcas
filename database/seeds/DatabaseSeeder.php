@@ -10,9 +10,7 @@ class DatabaseSeeder extends Seeder {
      * @var array
      */
     private $tables = [
-        'locations',
         'machines',
-        'machine_types',
         'users'
     ];
 
@@ -27,8 +25,6 @@ class DatabaseSeeder extends Seeder {
         Eloquent::unguard();
 
         $this->call('UsersTableSeeder');
-        $this->call('MachineTypesTableSeeder');
-        $this->call('LocationsTableSeeder');
         $this->call('MachinesTableSeeder');
     }
 

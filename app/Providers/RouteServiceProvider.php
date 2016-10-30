@@ -25,6 +25,7 @@ class RouteServiceProvider extends ServiceProvider {
     public function boot()
     {
         //
+        \PaginateRoute::registerMacros();
 
         parent::boot();
     }

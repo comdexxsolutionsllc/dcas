@@ -29,4 +29,18 @@ class ResetPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
+
+    /**
+     * Overriding password length and validation from stock.
+     *
+     * @return array
+     */
+    protected function rules()
+    {
+        return [
+            'token' => 'required', 'email' => 'required|email',
+            'password' => 'required|confirmed|min:6',
+        ];
+    }
 }

@@ -36,4 +36,19 @@ class LoginController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
+
+
+    /**
+     * Overriding validateLogin method to allow for domain field.
+     *
+     * @param Request $request
+     */
+    protected function validateLogin(Request $request)
+    {
+        $this->validate($request, [
+            $this->username() => 'required',
+            'password' => 'required',
+            // new rules here
+        ]);
+    }
 }

@@ -34,6 +34,13 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\LogLastUserActivity::class,
         ],
 
+        'fw-block-bl' => [
+            \PragmaRX\Firewall\Middleware\FirewallBlacklist::class,
+        ],
+        'fw-allow-wl' => [
+            \PragmaRX\Firewall\Middleware\FirewallWhitelist::class,
+        ],
+
         'api' => [
             'throttle:60,1',
             'bindings',
