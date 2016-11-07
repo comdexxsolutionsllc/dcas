@@ -1,4 +1,11 @@
 <?php
+Route::group(['domain' => 'api.sarahrenner.work', 'middleware' => 'api', 'namespace' => 'Modules\Api\Http\Controllers'], function()
+{
+    Route::get('/', function () {
+        throw new \Illuminate\Validation\UnauthorizedException();
+    });
+});
+
 
 Route::group(['domain' => 'api.sarahrenner.work', 'middleware' => 'api', 'prefix' => 'v1', 'namespace' => 'Modules\Api\Http\Controllers'], function()
 {

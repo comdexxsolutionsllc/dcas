@@ -2,7 +2,6 @@
 
 namespace Modules\Api\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use DCASDomain\Models\Machine;
 use Modules\Api\Transformers\MachineTransformer;
 use Illuminate\Http\Request;

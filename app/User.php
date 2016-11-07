@@ -28,6 +28,7 @@ class User extends Authenticatable {
         'password',
     ];
 
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -38,6 +39,16 @@ class User extends Authenticatable {
         'remember_token',
     ];
 
+
+    /**
+     * Utility function to return last row of database.
+     *
+     * @return mixed
+     */
+    protected function last()
+    {
+        return $this::orderBy('created_at', 'desc')->first();
+    }
 
     /**
      * @return bool

@@ -15,6 +15,10 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <style>
+        /** TODO:  Move inline style to CSS file **/
+        .hideThis { z-index: -1; visibility: hidden; }
+    </style>
 
     <!-- Scripts -->
     <script>
@@ -58,7 +62,7 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ $user->present()->fullName }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
