@@ -2,7 +2,7 @@
 
 namespace Modules\Api\Transformers;
 
-use DCASDomain\Models\Machine;
+use Modules\Api\Entities\Machine;
 
 class MachineTransformer extends \League\Fractal\TransformerAbstract {
 

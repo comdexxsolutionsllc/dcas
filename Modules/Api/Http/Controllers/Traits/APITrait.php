@@ -51,6 +51,20 @@ trait APITrait {
 
 
     /**
+     * Check limit has valid characters.
+     *
+     * @throws \UnexpectedValueException
+     */
+    protected function checkLimitHasValidChars()
+    {
+        if ( ! ctype_digit($this->limit))
+        {
+            throw new \UnexpectedValueException('Limit contains invalid characters.');
+        }
+    }
+
+
+    /**
      * Checks if $_Get['debug'] is set.
      *
      * @return boolean
