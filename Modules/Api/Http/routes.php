@@ -24,7 +24,15 @@ Route::group([
     {
         return App\Exceptions\DCASDomainErrorHelper::unauthorizedException();
     });
+});
 
+Route::group([
+    'domain'     => 'api.sarahrenner.work',
+    'middleware' => [ 'api', 'throttle', '\\Modules\\Api\\Http\\Middleware\\AddMetaInformation' ],
+    'prefix'     => 'v1',
+    'namespace'  => 'Modules\Api\Http\Controllers'
+], function ()
+{
     Route::get('/user', function (Request $request)
     {
         $full_name = $request->user()->first_name . " " . $request->user()->last_name;

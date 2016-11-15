@@ -5,25 +5,30 @@ namespace Modules\Api\Http\Controllers;
 use Modules\Api\Entities\Machine;
 use Modules\Api\Transformers\MachineTransformer;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Input;
 use Symfony\Component\HttpFoundation\Response as IlluminateResponse;
+use Modules\Api\Objects\APIError;
 
 class MachineController extends Controller {
 
-    protected $machineTransformer, $meta, $request;
+    protected $machineTransformer, $meta, $request, $response;
 
 
     /**
-     * Constructor
+     * MachineController constructor.
      *
      * @param MachineTransformer $machineTransformer
+     * @param JsonResponse       $response
      * @param Request            $request
      */
-    public function __construct(MachineTransformer $machineTransformer, Request $request)
+    public function __construct(MachineTransformer $machineTransformer, JsonResponse $response, Request $request)
     {
         //$this->middleware('auth');
         $this->machineTransformer = $machineTransformer;
         $this->request = $request;
+        $this->response = $response;
     }
 
 
@@ -42,7 +47,7 @@ class MachineController extends Controller {
 
         $machines = Machine::paginate($this->limit);
 
-        return \Fractal::collection($machines)->transformWith($this->machineTransformer)->addMeta(parent::addMeta())->toArray();
+        return $this->response->setData(\Fractal::collection($machines)->transformWith($this->machineTransformer));
     }
 
 
@@ -53,7 +58,7 @@ class MachineController extends Controller {
      */
     public function create()
     {
-        return parent::NotImplemented();
+        return APIError::NotAllowed();
     }
 
 
@@ -112,7 +117,7 @@ class MachineController extends Controller {
      */
     public function edit($id)
     {
-        return parent::NotImplemented();
+        return APIError::NotAllowed();
     }
 
 
