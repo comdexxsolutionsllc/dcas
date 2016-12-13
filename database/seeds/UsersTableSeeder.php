@@ -24,7 +24,8 @@ class UsersTableSeeder extends Seeder {
                 'register_ip' => $faker->ipv4,
                 'remember_token' => null,
                 'forget_token' => null,
-                'active_token' => null
+                'active_token' => null,
+                'domain' => $faker->domainName
             ]);
         }
     }
