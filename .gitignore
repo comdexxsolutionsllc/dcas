@@ -8,3 +8,5 @@ git_tag
 admin-test.token
 *__notes
 git_commands
+
+tests/_output/*

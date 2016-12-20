@@ -9,10 +9,3 @@ modules:
     enabled:
         # add framework module here
         - \Helper\Functional
-        - Db
-        - Filesystem
-        - Laravel5
-        - Asserts
-    config:
-        Laravel5:
-            cleanup: false
