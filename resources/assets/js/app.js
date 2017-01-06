@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+import Form from './core/Form';
 
 
 /**
@@ -14,28 +15,45 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-Vue.component('app', require('./components/App.vue'));
+// Vue.component('app', require('./components/App.vue'));
+//
+// Vue.component(
+//     'passport-clients',
+//     require('./components/passport/Clients.vue')
+// );
+//
+// Vue.component(
+//     'passport-authorized-clients',
+//     require('./components/passport/AuthorizedClients.vue')
+// );
+//
+// Vue.component(
+//     'passport-personal-access-tokens',
+//     require('./components/passport/PersonalAccessTokens.vue')
+// );
+//
+// Vue.component(
+//     'machine-grid',
+//     require('./components/MachineGrid.vue')
+// );
 
-Vue.component(
-    'passport-clients',
-    require('./components/passport/Clients.vue')
-);
-
-Vue.component(
-    'passport-authorized-clients',
-    require('./components/passport/AuthorizedClients.vue')
-);
-
-Vue.component(
-    'passport-personal-access-tokens',
-    require('./components/passport/PersonalAccessTokens.vue')
-);
-
-Vue.component(
-    'machine-grid',
-    require('./components/MachineGrid.vue')
-);
 
 const app = new Vue({
     el: 'body',
+
+    data: {
+        form: new Form({
+            name: '',
+            description: ''
+        })
+    },
+
+    methods: {
+        onSubmit() {
+            this.form.submit('/projects')
+                .then(response => alert('Wahoo!'));
+        }
+    }
 });
+
+
