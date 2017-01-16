@@ -1,3 +1,6 @@
+import axios from 'axios';
+import moment from 'moment';
+
 
 window._ = require('lodash');
 
@@ -30,6 +33,20 @@ Vue.http.interceptors.push((request, next) => {
 
     next();
 });
+
+/**
+ * Require Axios
+ */
+window.axios = axios;
+
+window.axios.defaults.headers.common = {
+    'X-Requested-With': 'XMLHttpRequest'
+};
+
+/**
+ * Require Moment.JS
+ */
+window.moment = moment;
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

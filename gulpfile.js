@@ -16,6 +16,5 @@ require('laravel-elixir-vue');
 elixir.config.css.autoprefix.options.browsers = ['> 1%', 'Last 2 versions', 'IE 9'];
 
 elixir(mix => {
-    mix.sass('app.scss')
-       .webpack('app.js')
+    mix.sass('app.scss').webpack('app.js').version(['css/app.css', 'js/app.js'])
 });

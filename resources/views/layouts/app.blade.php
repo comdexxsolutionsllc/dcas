@@ -14,7 +14,7 @@
     <link rel="preconnect" href="//cdnjs.cloudflare.com">
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
     <style>
         /** TODO:  Move inline style to CSS file **/
         .hideThis { z-index: -1; visibility: hidden; }
@@ -88,6 +88,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    <script src="{{ elixir('js/app.js') }}"></script>
 </body>
 </html>
