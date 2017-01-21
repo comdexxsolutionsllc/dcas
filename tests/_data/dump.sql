@@ -1,1 +1,503 @@
-/* Replace this file with actual dump of your database */
+-- MySQL dump 10.13  Distrib 5.7.17, for Linux (x86_64)
+--
+-- Host: localhost    Database: dcas
+-- ------------------------------------------------------
+-- Server version	5.7.17-0ubuntu0.16.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `cache`
+--
+
+DROP TABLE IF EXISTS `cache`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cache` (
+  `key` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `value` text COLLATE utf8_unicode_ci NOT NULL,
+  `expiration` int(11) NOT NULL,
+  UNIQUE KEY `cache_key_unique` (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cache`
+--
+
+LOCK TABLES `cache` WRITE;
+/*!40000 ALTER TABLE `cache` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cache` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+DROP TABLE IF EXISTS `failed_jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `failed_jobs` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `connection` text COLLATE utf8_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `failed_jobs`
+--
+
+LOCK TABLES `failed_jobs` WRITE;
+/*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `firewall`
+--
+
+DROP TABLE IF EXISTS `firewall`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `firewall` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ip_address` varchar(39) COLLATE utf8_unicode_ci NOT NULL,
+  `whitelisted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `firewall_ip_address_unique` (`ip_address`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `firewall`
+--
+
+LOCK TABLES `firewall` WRITE;
+/*!40000 ALTER TABLE `firewall` DISABLE KEYS */;
+/*!40000 ALTER TABLE `firewall` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `jobs`
+--
+
+DROP TABLE IF EXISTS `jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `jobs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `queue` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `attempts` tinyint(3) unsigned NOT NULL,
+  `reserved_at` int(10) unsigned DEFAULT NULL,
+  `available_at` int(10) unsigned NOT NULL,
+  `created_at` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `jobs_queue_reserved_at_index` (`queue`,`reserved_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `jobs`
+--
+
+LOCK TABLES `jobs` WRITE;
+/*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `language_lines`
+--
+
+DROP TABLE IF EXISTS `language_lines`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `language_lines` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `group` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `key` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `text` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `language_lines_group_index` (`group`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `language_lines`
+--
+
+LOCK TABLES `language_lines` WRITE;
+/*!40000 ALTER TABLE `language_lines` DISABLE KEYS */;
+/*!40000 ALTER TABLE `language_lines` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `machines`
+--
+
+DROP TABLE IF EXISTS `machines`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `machines` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `type_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `location_id` int(11) DEFAULT NULL,
+  `machine_name` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `machines`
+--
+
+LOCK TABLES `machines` WRITE;
+/*!40000 ALTER TABLE `machines` DISABLE KEYS */;
+/*!40000 ALTER TABLE `machines` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES (1,'2014_10_12_100000_create_password_resets_table',1),(2,'2016_05_31_124502_create_scheduled_events_table',1),(3,'2016_06_01_000001_create_oauth_auth_codes_table',1),(4,'2016_06_01_000002_create_oauth_access_tokens_table',1),(5,'2016_06_01_000003_create_oauth_refresh_tokens_table',1),(6,'2016_06_01_000004_create_oauth_clients_table',1),(7,'2016_06_01_000005_create_oauth_personal_access_clients_table',1),(8,'2016_09_05_030643_create_cache_table',1),(9,'2016_09_05_030649_create_notifications_table',1),(10,'2016_09_05_030701_create_failed_jobs_table',1),(11,'2016_09_05_030709_create_jobs_table',1),(12,'2016_09_15_234223_create_machines_table',1),(13,'2016_09_15_234225_create_users_table',1),(14,'2016_10_22_163202_create_sessions_table',1),(15,'2016_10_29_205747_create_firewall_tables',1),(16,'2016_12_11_134308_add_domain_to_users',1),(17,'2016_12_20_002651_create_language_lines_table',1);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `notifications`
+--
+
+DROP TABLE IF EXISTS `notifications`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `notifications` (
+  `id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `notifiable_id` int(10) unsigned NOT NULL,
+  `notifiable_type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `data` text COLLATE utf8_unicode_ci NOT NULL,
+  `read_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `notifications_notifiable_id_notifiable_type_index` (`notifiable_id`,`notifiable_type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `notifications`
+--
+
+LOCK TABLES `notifications` WRITE;
+/*!40000 ALTER TABLE `notifications` DISABLE KEYS */;
+/*!40000 ALTER TABLE `notifications` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `oauth_access_tokens`
+--
+
+DROP TABLE IF EXISTS `oauth_access_tokens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `oauth_access_tokens` (
+  `id` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `client_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `scopes` text COLLATE utf8_unicode_ci,
+  `revoked` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `expires_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `oauth_access_tokens_user_id_index` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `oauth_access_tokens`
+--
+
+LOCK TABLES `oauth_access_tokens` WRITE;
+/*!40000 ALTER TABLE `oauth_access_tokens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oauth_access_tokens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `oauth_auth_codes`
+--
+
+DROP TABLE IF EXISTS `oauth_auth_codes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `oauth_auth_codes` (
+  `id` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `client_id` int(11) NOT NULL,
+  `scopes` text COLLATE utf8_unicode_ci,
+  `revoked` tinyint(1) NOT NULL,
+  `expires_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `oauth_auth_codes`
+--
+
+LOCK TABLES `oauth_auth_codes` WRITE;
+/*!40000 ALTER TABLE `oauth_auth_codes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oauth_auth_codes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `oauth_clients`
+--
+
+DROP TABLE IF EXISTS `oauth_clients`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `oauth_clients` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `secret` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `redirect` text COLLATE utf8_unicode_ci NOT NULL,
+  `personal_access_client` tinyint(1) NOT NULL,
+  `password_client` tinyint(1) NOT NULL,
+  `revoked` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `oauth_clients_user_id_index` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `oauth_clients`
+--
+
+LOCK TABLES `oauth_clients` WRITE;
+/*!40000 ALTER TABLE `oauth_clients` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oauth_clients` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `oauth_personal_access_clients`
+--
+
+DROP TABLE IF EXISTS `oauth_personal_access_clients`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `oauth_personal_access_clients` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `client_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `oauth_personal_access_clients_client_id_index` (`client_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `oauth_personal_access_clients`
+--
+
+LOCK TABLES `oauth_personal_access_clients` WRITE;
+/*!40000 ALTER TABLE `oauth_personal_access_clients` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oauth_personal_access_clients` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `oauth_refresh_tokens`
+--
+
+DROP TABLE IF EXISTS `oauth_refresh_tokens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `oauth_refresh_tokens` (
+  `id` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `access_token_id` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `revoked` tinyint(1) NOT NULL,
+  `expires_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `oauth_refresh_tokens_access_token_id_index` (`access_token_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `oauth_refresh_tokens`
+--
+
+LOCK TABLES `oauth_refresh_tokens` WRITE;
+/*!40000 ALTER TABLE `oauth_refresh_tokens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oauth_refresh_tokens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`),
+  KEY `password_resets_token_index` (`token`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+LOCK TABLES `password_resets` WRITE;
+/*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
+/*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `scheduled_events`
+--
+
+DROP TABLE IF EXISTS `scheduled_events`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `scheduled_events` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `command` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `output` text COLLATE utf8_unicode_ci NOT NULL,
+  `logged_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `scheduled_events_command_index` (`command`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `scheduled_events`
+--
+
+LOCK TABLES `scheduled_events` WRITE;
+/*!40000 ALTER TABLE `scheduled_events` DISABLE KEYS */;
+/*!40000 ALTER TABLE `scheduled_events` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sessions`
+--
+
+DROP TABLE IF EXISTS `sessions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sessions` (
+  `id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `ip_address` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_agent` text COLLATE utf8_unicode_ci,
+  `payload` text COLLATE utf8_unicode_ci NOT NULL,
+  `last_activity` int(11) NOT NULL,
+  UNIQUE KEY `sessions_id_unique` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sessions`
+--
+
+LOCK TABLES `sessions` WRITE;
+/*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
+INSERT INTO `sessions` VALUES ('0k8KE2Cvr26MALNEs4myjst0XAnvVv06G8xLfFwd',NULL,'209.128.119.82','KickFire','ZXlKcGRpSTZJa2RoUWx3dk1GRjBiRE13Y1VGV2JWQjFZWEUyZFhGUlBUMGlMQ0oyWVd4MVpTSTZJbWhjTDFaa1VuVmFOa2hqWlVoMlQxUnJTSFZFVUZKeGJtSnhVMVphZFRrMUsxRjRabVE1UVRGRU9VNUlXblZFTVZCaVdtNU1Oa2M1SzB0YWNVSjZUelJyY0ZOV1ZIcGNMemd6Ym5wY0wzVXhRbFJQUm5kQk5WSk5VMEUzWm5CdWFGd3ZWMGhjTDJkRlYzZHFkMUJ3ZG5GWlRraEpkR04wY2s1NWVEWnJOWEJLUjNsblZHNVJWV3BtUlRJNFMwNW1XSHBEY3pCTlpVd3dPVWxpZFU4NWQyMTRRMGhQWEM5Q1hDOUdVbWhEVjA1cFZHeEVkVGx5T0RkQ1JUVm5YQzlTZGs5eU9VbEtZblEzTkdrcmMyUmliM3AyY1hRelpXNUZWbGN5VTA4ek1WUktSM1ZFSzNoTFNHaEJaV0paVGpKUmJqTjFkRFpGZVZ3dlJUaFBkak5qVjFFM1YwMVVZazFZTjBGbWRWbFplSE5MYVVKNksxWnBRWFZKUjJadFJYcHRXVTFNUjNsYVkwcExhRGxRVkRKUFFWZE1hRGg2VjFWWmQzTXdaRWRoTkdWRGJWTnRRMmswWkdReVFsQk9XVm9yVDNOSFUycHRVSE4yZDBOdUsxQnJlVmRzTjBaYVJrRk9OSGhWVDJadVNYRjJaREJsSzFCa1UxTlBSMDV3Wkhkd09VOTRibVpXTm1KalJ5SXNJbTFoWXlJNkltRXdNVFJpT0RJM1pEYzBOekJoWldRM01HTmtZamcxT0RWa1lXSXlPR00yTWpWa1lXSmlaak5oWWpkbFltUXdNelkzTTJNNU9HRmpZak5tT1RVNVkyVWlmUT09',1484848680),('1WKWNwAR8Xy9RvGq4OoN6Q8OLIyGkTMwsmKlhd5O',NULL,'5.255.250.100','Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)','ZXlKcGRpSTZJbXBHUW5sbVFXSjZaSE5PV2tSdE5tNUJOWEpLWEM5M1BUMGlMQ0oyWVd4MVpTSTZJbkpGTVdaQmQxSlhVSEZzVEhsY0wwUldXbTVCT1RGYWVrTkVVa3BJSzBkUGJXSkVRbG95YTB4M0sxd3ZSR3QzTkcwM2IzSkZTM0pLZFdWUFZsTnNkRXBYYm14RGVHbFdVMjAxYkc1NWEyNWNMM1Z2YWpCSlEycEVRMjk1ZVUxdk5WUXJTMmRhU1d0SE9XaFphbnBrVDNwMlNYY3pWMWh2Y0RKcFYzZG9RbkZOWVdkbFJVMU9SVmxPVGs1b1JtMXZVMVExVVU1bVNscDNUMmcxVldsVFRFeGpVV0V5VUU0M04xbE1kelkzZGxwdWNuWkRSVkZLUVRBNVlYRjRSREppU3pjMFVVNXFWRVpXZUU1UFdIcERUMDlwYTA5VFNrMHplbUptWmt0VVRFaElSVEJzUVdkMWNqVlRhVGxyTkRBNGVHSXpOMEpFV1VKT1NWcEliRlpCYnpCTVYzSm9WU3QxVFZWbmFFNW5Ta2RxVlRkTVJqWnRaMWh1VEhGa2JWQnRNR0ZyYVdkdlpGTTNUVWhaTUdkMk5VTnZXbFkxT1Z3dlUyOXhVbXczTTFKVlpIbEJhakoxVW10VlZWTnJWbFJRVmpkUmIyVjFOR3c0SzNBd2JWcHZZVFJGU2tabmRtaG1UM2xMVEVwdGJuWkZlbVZ5VlhaM05HaHdjVlZaZWpkNGMzQm5aa1VpTENKdFlXTWlPaUpqWVRaaFkyUmxNREEwTVRVMU1EUTBZMkkwTVdNNU16ZzFOek0xTWpkaU5qRXpNRFE1TnpKbE5qVmhNMlJsWkdFME1XVXdNMlZtTXpSak9EaGtPR0UwSW4wPQ==',1484656992),('3aHFM8gGNPZ6E8uun3jq9Pbn20d2c1H1OKrI8y5b',NULL,'5.255.250.100','Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)','ZXlKcGRpSTZJbXQxTTBwdE56aDNSakp4TURZd2FFNVRZVW8wYjJjOVBTSXNJblpoYkhWbElqb2libmQ2TWxNclFVMXdjMjFVVG1wdllUQk1hSFp6TVdsVVdscG1UM0kwZWtKS04ydEVNVnA1ZEVJMVl6RkZPWHBLU1c0ek1FeHRlVGxhWVdWME9VeGNMM1phYmtGa1RWRndPSHBqY0ZKUU1rOVliMnR6TlRabE1GWkdUMkpQTW1FM2NXeEhkemh6ZUdKNGJFczNjME5IWmtoa1lYQmpOaXQwZUVzclRqVnpRbnA2Y1Vjd1EweHNWVGM1WEM5R1kxWnFPRUZXWW13emRGVk5VakprTXpGM2NtZFhOVlUwV0hWd2N5dDZkMnBMWkZoV1RsZDZVRGs0V0RGVFRTdDZOelpvZFhsdFVXeG5XRGxMYTNvelFreElhbVZXYVdScFJFUmxiSFZGZEVNck1WaE9WSEoyWTBodlJ6aHlTRzAzVW14dWRISnlORlpUWldZeVF6QjBYQzl0ZUdkMVRsWTFka1V3UzFkMlZrbENVSFJSTm1kQ1VFMTRURkpXV205eGJIbGhlbVZ3WmxoV2RFVXJPR1ZKYnpSUWJrODNRMHBuY0VGRGMySlBWeXR2TlhkQ1JGbHdSSEZFUW5OeFpVNWFaemxGUVhsdk1WVmllRTF2VW1ObWJHNTRNekY1VFVKaVF6RlNWMVJTUjNCNVNHWm9iWGhLSzNaSVRWRkNVWEJPWlRsRVptUkNJaXdpYldGaklqb2lNRE5tT0RJeFlUY3dNemszTURVMlpEWTBPV1E1WmpBNU5XWm1NRFk0Wmpjell6WmhNVGd3TXpJMU1tUTNNVFpsTVdSaFpETXhNakF5TlROalpqazRNQ0o5',1484394630),('3x1fDesinIur6x34yepy0QS3nClCYMFqvZOonqxM',NULL,'38.100.21.66','Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.2)','ZXlKcGRpSTZJaXN5WTIxNU0wdE5VVmhMVVc5TWJFbHRUMlJITWtFOVBTSXNJblpoYkhWbElqb2lVRmR3ZVVKUFltSlBkMUYzYUdsSFZqbGphVW9yWWtwT1ppdE5kRTlIVG5SNFQyTnFhVlkzYjJwMFFucFlPVXBLY1hvd1VtZFFUazh5YVRCbWRYWXhkWEpEZVdWQmRsTnJNRlJyWkZSNU1HbFlVMlZsTVhSbVlqUkJRemR4Vm10cU9FTTBVVmhKZUdkaFFVTjNTelZFUkd0blJHdFBVbEpaTURsVloxQlpZbTVIWlZodGFETmlVbU5pWEM5bE4yeGNMMnN4VFdsMU5rVkdVMU5XVjBNM1JuVklaMXd2TVRZMlMydHdaMDVCWEM5U1VWRmhUV3RVUlhGNlNtOVJiRk5qUTFCNlJWTldUbHBMZFhWRVNHbElZblJHUkRsS016VktkWEJHVWtGSlZFeFVSRlF4U3pKd01XMXNOa3R4ZUhvMk5tbG1NVFowYmtGNFUyY3lhRWt3Wm5WY0wxQllWMDlLYWpsS1NFSlViMHA1U1dkSldXTjBaek53Y2pSQ1NVVjBRMlpwYkhsTFIzTkVhakpFZGtKWGJISjZPV3BZV1dsUGFraHhWWFJuUzBkdFZrSmhaa3g1U1VNelRTdGFhREJqTVVsRlkzbDBaMGd6UkVsRVRVOTBOMWhNV1hCS2JFSnNUbXRpWmpGUk9DczNUWGQxYVRWb2NpdFlWMEpxTTFWYVNrZDBRelVpTENKdFlXTWlPaUl3WXpSa1l6QTBNbUkyTURRell6a3haamd4WWpJMU9HRmhPRFJsWXpRNVl6TXdNVEV5WlRobVpXSXdZalpqWXpSa09UWXdOVEF5TjJGbVpXTXhNVEV3SW4wPQ==',1484300570),('8UbVVKQu04nMwDdaDR7JFwNDlM7uSTy2lrYhCipL',NULL,'52.71.155.178','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.1.25 (KHTML, like Gecko) Version/8.0 Safari/600.1.25','ZXlKcGRpSTZJbkoxVlZwc2NsUk9RblJsYlU5U1IyTm5OMjh3VlZFOVBTSXNJblpoYkhWbElqb2laa2hqV2x3dlYwSlBZVUZ4V1RKMlNHOTROM2htY1cxalYwb3pORkpWU2t4dWQzVnlOM1ZZZFhaS0szbHJkbHBEU0ZOdldYUjNaM042WkdoVU5IQnhjRzFwT1ROaFRWWXdORXMzWVdGNGRHeDBiV0ZxT1RWUVJXdHVWVlF3U0ZScGVrSm1OMGM0ZVZsaWRUbHRXbmRhY1VOMVEySnJXa2RpTlc1Y0wycDBTazhyVW1SVmNISjNWMjlaYlhCak5YaHhUV0ZjTDI5UWJVOXVaVlZHTXpJcmVFOU1RV05qT0RWdU1qTkVUSGhjTHpNeFUxbHlLMjVuWTNCTGFtWlZUSE5zYjNvMllWTTBTVzV1WTNWbU4za3JPVVUyVTJOTVEybHFibEp4YWpOc1ZtaHdkbE41Umt0NFRtRm1hMVI2UjNFNE9VTnRiSEpFYUVNME56TlNUSE5OWVZaSU9IQndiVGM1TkZkVlUxWllLMlZ4Y1ZCWVFrcHhTR0Z5WkdwWlJITlNiSEpFZEZwVlkzVjJURzQ1VVN0b1ozSlZSVXc0WVU5SlJXOUNTakZoWkcxaFYzUjJaMnRaYmxnek5XUnZWVGx2UkRoaVRFbFpZVlp6UmtaR1pITldVRlV4YmtjMWRIbFZWVlJWT0V4NFptTk9iRU5vZUVkWFNqQkRXVkpWY0ZwdlkwVnhSU0lzSW0xaFl5STZJbVU0Tm1Ka05qaGlOV1ptTVdFeVpERTBORFF5TnpjMlpXSTJPVGM1TVRZNFlqaGpNekprT1dFeE9HVmtaamcyWkRCbVlXSmlPREJpTVRFM09XVTBOakVpZlE9PQ==',1484171016),('8VhAz1030khc38iRll7U3kPKX3jTrUYVLZ5CCiKm',NULL,'52.71.155.178','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.1.25 (KHTML, like Gecko) Version/8.0 Safari/600.1.25','ZXlKcGRpSTZJbEJxZG5kalZHdHNlVVpXVVdSR1JUbDFjeXRpYlZFOVBTSXNJblpoYkhWbElqb2lWbmM0TjB4U1pXZ3hPVzlVVmpod2JHbFhlVXBrUjAxUGNVaHRLMjVDZFdOQmQxVmFRVVp0TVVnd05rVlJTblJEY1VKd1RUZGNMM04wVW1jNVIxUnNjVzlOTldWbVVFc3dhVTV3UW5KUVdUSmtRVEJxVjNkdlN6SjNYQzlEU2xjeWNuUkNTMWhTT1RKcFlUSkVVbEU1ZUVwaGJqaEJUbkl5Y1dkaVlUaEtiVEJYZGtGdFkxbzBTbUpzVERaMmNuZHBOR2syUlRabVRYVXpLekZSUzFSbFZIUjNWMVpNUml0T2FqaE1aR0ZrWXl0UmMybE5TMGx6SzBNMmFISlFNamxyU2twWlYwcFJSSFZsVTBWNVFXcFhZblp0UjBwYVpIWnVlbEY2U1dwemNtVklkM1Z5VUVSVWJFd3hkRk5KVldFd1YySmpNMkpLYTI1T1oybExkRFoxZVZFMVR6UTVUV2g1YlZaSFZtWm5YQzlxY2t4VFJrb3diVVJZSzBGME5uazVObkJvYW1wTVRVODRTamswVEhoSFVGbG9Vako0UW5OYWIyTlFjMlEyUkhCa2FqWmFPVFk1TVRsM1YyTXpVRVIzV2xCU1ltdEVNMGx0ZDJ0T1dsSnlZVnBIYlhkWmJXWllkRmRaV21wWlRXMVZTbXh1V1Z3dlRVbHBTRkZuTlZGbGN6QldWU0lzSW0xaFl5STZJall6TldKaFptSTFPV0kwT0RsaU1UbGxPV1F5WW1ZME56ZGlZVGs1TXpNMU9HWTJZemcwWmpFellXRXpPR05pWXpjeFlqZzFPREExWVRKa05qVXlPRE1pZlE9PQ==',1484555617),('auppbpWgNRWqSi7wJNfHStZFWqW1InlBx1Zp2ftq',NULL,'95.165.9.72','Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; InfoPath.1; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)','ZXlKcGRpSTZJa040YlhZMmREWnhRakJQV0RWaEszaDRZM3BhZFZFOVBTSXNJblpoYkhWbElqb2lUMGs0Ynl0T1RIUnNORXBaZFhGbWFsVlpZV0pqVURabVYySlRkRzExZDB0aFRYZzJkMXB5TVZseFFsRTBUM3BTTTFKbllVSm5TekpDUlhrNU9YaE1ja3h1TTJ0SGJVMUhkMFp4WjNKRmJWcEdZMlJ5ZWxRM1ZtMW5PRTFvZUdGQ1MyUXJjblEyYTBwY0x6WXdWRnAyWTFOMllWZE9SbTlIT1VGMVN6bFpTbGgzWjJKa00wTlhlbE5GVmxoaVZWVTJVV0pxSzBzM1ZqaDJibXg0YzA5MVVtdG9UM0F6UkRSVmVrNWFNVGhFVkZwa2QwdE9NWHB0SzAxamVETjVXRVZsVUhjcmRFdzNNazVwYzJKMVNWaGthMlZ2ZEdSQlVXVlpPR280UjI5T1NsaFdhM0FyTTFOalQyMTRkaXMwU25FNFdXRm1kMmN4UjNCSmNqQTFTbGd4V210clZXczNWV3BEYlZKVlMzWjJja2xtVkRsS1dHRk5TVTVxVWpWNFN6aHlkMkUzUm5KS1VsbFZla3hNVkRSWGIwVjFSa1p6VmxOMmNtZDVaM3A2YkhjMVhDOU5Ra1l4TTJ0T2R6VnNaMk5ZVlhodVVYQkdLMFJIWVRVMFZYVnFLek5VVDFGRGFFSnVRV3RvT1ZKaVVFNVJTRFozYWpkVFUxZEJUa3h5WTFaWVIxRWlMQ0p0WVdNaU9pSmxOR05tT1Rsa09UY3hPVEF4TkROak1qZzVOakV6T0RCa1l6ZzJOVEpsWTJNM01EZGlNemsxWlRJME1XTXhaRGcxTkRGa05EUXhNV1JpTm1RNU56WXhJbjA9',1484306325),('bcFmdjSuAW98OYh6kpB7RjGPEyhVIxqL3u85imcn',NULL,'38.100.21.66','Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.2)','ZXlKcGRpSTZJa1ZPTXpKNGR6aENaSHBRY1ROblVrcHVWSEJsUjBFOVBTSXNJblpoYkhWbElqb2lha3RMTW5kbk9UaEdlRm8yVGxreFZsTTJia2gzT1hOY0wwUTJRWEU1Y1ZCcVlUTXlLekV3VkhCdmF6WndYQzh6V0VOVFVYb3pYQzl3Y1RKT1IyOVlNV1ZxZDFGd2RrOTZSek0wYm5WSlNteG5XazA0SzFOMFZ6QjBRM1ZtY25WcmVrRkVWV2x0TTJkcFNsUk1Sa2w1ZDJSV1JtRjJTMDFJUjA4cmNtdDJVR2RtY2tzNGFGSndVakJrYVU5YVZDdG1TMGxZT1RVM2VISjBhbVJpWkd0bFdFc3JLM2swYzBjelpubzNOVWh1YjNGSk9FazFhVkJpV1dJMWNEZGNMelZNYVU0MmFqTk9Sbk14WEM4eldEaGtRMnhtTTNjclZXWklPU3R0Ukc1UFVuZGxabmhYU2tneWQzVnRSRVpaZHpKUVUxazVkM3BxTld4QlIycEljekZFUTFkVlNtWlFNbnBNZFZkeGQxZHdXVlJIU1dScFpIWk9Na2QwTms5SEsxVnNlVWRWYjA1eWNWUnZUMDVQV1VkU05qVjNTbHBjTDB4dmJqbDJaamhWY2x3dk9XbzFXR3g1VlVSU1REWlRWU3Q2WmpCTlp6WnhORGtyVG5saWIzVjNkblZ5YkZaTWIxd3ZORWcyWm10NE1sUjRNVzh5WVZCVWVVbEtWR0V4YWtJNWFVdDZOMnRWVUhSMU1UTm5iMjFKWjBaNlUyWk1XR2hPZWsxTVlrcFJQVDBpTENKdFlXTWlPaUprTkRnME9HTmhNV0ZtWlRaa05EQmtOakF5WWpkaE9HUmhNV0U1TldaaU1EUmhaVEZtWkRBeFlqQXdaVEJtTlRsaE5tSmhZbVF5TVRZd1lUUm1OR1ZqSW4wPQ==',1484300570),('BmhoNVxfXQuaYfV7IXSiUegcBXIIdN3qOe7lLgrN',NULL,'52.71.155.178','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.1.25 (KHTML, like Gecko) Version/8.0 Safari/600.1.25','ZXlKcGRpSTZJblZ3YWs1TE4wcHNRbVZCYVRKNGJUQlJLM2xoT0djOVBTSXNJblpoYkhWbElqb2lNRGN4TkRjMmRqRm1iekZsY1ZKMmMzRk5la3Q0YVRKTVdtUmFValpqWmxvMmEydHZhbnB6ZW1WV2IyNW1Za3R4UXpOMVhDOVpVa2RVWlU5NFEyVlpUbFIwTjAxelhDOXRYQzgyTUdwVFJIaERkSFZHSzBsdmEweEdaVVpGUWpSQ1oyUXJkMWxrZUhsU1NFaHNOV1ZzUkdadmNrRXhTbU5CVkZGWGNuUlhNbTlETkZSNUswbElhVWtyYjJGNlZGcEdNa05zYW5GSU4ycEpUVmhIVlRCRWJreGpkV2xEU2xobmEwUlBkWHBoV0dGTFJXeFhkVWQxWjBrelhDODRPR1JtUjBoMVZuRkNTek00YmtwSmVreFFRa3hOZFRWRlJGRlZUbmxhU0dOTVkxZ3JZWFZyVEhFd1lsbG5ZMnQ1YmprelMwOUpSbWQ0WWtOeVZscGFaMUl5VDFvMlZYVjNZVlZRT0dJMVVrcE5kaXRSYzNBNFprWjFVVVZYUkV3MGVsRjBWazh4WjBSUmFqRlBLeXRVZFRscFRtbFhaMFpWVW5wMU9IcFdWazlwZFRGR05GRXdaRnd2UzBaalVWQmtlWGN5YkhOUWEzQkpaakoxT0VwUVZHeG5UM2h4Ym5FeFhDOXlSREJKTjJ3NE1EVnBSVXhxU0ZBNGNrMWxhekF6VTNkcVZFMXZlVWQzSWl3aWJXRmpJam9pWVRkaE5XSmxOREJqTkdJNU5UazVNR1JtT0RRME9UYzVNek14WXpVd05UWTRZall5TldVM1pURmhPRFpqTXpWak16VmxZbUZrWXpWaE5XVTBaRFZtTWlKOQ==',1484301897),('bNPt0MXL0fnPrAx8seWtYx1h64cJhKdML557r7YP',NULL,'176.195.84.127','Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; InfoPath.1; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)','ZXlKcGRpSTZJbFZ5VVZkTlNUTjVTV3c0TTIxaVZHcGlWV1JNV25jOVBTSXNJblpoYkhWbElqb2libU5TWTJKVVQyNXVkekpXYW1sUE9GZFlTRnAzYWpCYWExaE5aalI2Ums5TlJscFZSelphZW5Cb1UyYzFUWEZwWkZKWVJVOVdUV3c1ZGxsU2RHaEZVRGhuYkRobVlrTjFORmg1VW1KMWVEaGNMM3BrS3pacWNWQlJTQ3RYTjJsRldGWkxhbTB6U1hOb1ltVjRTVlZwWld4T2RUVlBSbUZyVDNOVGF5dDJObU5HTjA5c1ZrMWxlak5QU2tnM2JtMW5SbUo2ZDBORVlqRjRZME5oZFRCRWVUUlRURnBaTkN0SU4zVkZNMjkzVjNwSmVYZDJWV2h1ZGpCUFNqRTBabVZyT1hkaGNVcEtZa0pJWWxwVlkyMDFWWGRoUkhKNWNWcHpObE1yTVhkYU9HaFRjRXBoVGt0RFkwWkRWWEZ0VUd0clYwRjVlRWhDVWxsMVQwRjFVMDFHYmtSRk5EVXpiR0puZDI5S2FGd3ZjMG8zVG5CWk0yaFJOMEpVWVVSMWVFeFZOVGx2TmxKeVVFSkNRbXB0TkU1YUsxQmlUV3AzWldRck4xaGhaMDFvUTBKaU9HdHZORkZjTHpCT05GaG1OR042ZVd4NE5YVmFPVVZXVmxwc1lUVTJWVlYwVjNaTk1tWTBNVFIwVmpOamJ6Z3hiRFIyYVdJMmRWZFJTR3gzWjBjNGJrNVhJaXdpYldGaklqb2lNekpqTVRSaU5tUXdOamt4TVRFMk0yVTBOekZqT1RNM1pEaGhOMll4WTJWaU56SmpNamhoTVRVNU16VmxaakEyWWprek16RmpZbVJpWkdRMVpXWTBaU0o5',1484331053),('CFyFBP4UaAy49viyjxqUD0cUn0KsbBw4oDW2tVsr',NULL,'64.79.76.50','Mozilla/5.0 (compatible; SMTBot/1.0; http://www.similartech.com/smtbot)','ZXlKcGRpSTZJbkJFUkVseFlqaDNPVXd4VTFGVlVVUmpRMXd2VVRKM1BUMGlMQ0oyWVd4MVpTSTZJbnBFVW1GWE9FaGpOalp5VUVScWRsaG1lakZ4Y2tGTFRFNTVVMkZOU1RCSU0zQmhNa3hqU2poeFJtaEhlWFJZVVRsNVFtNHlka2xTWkUxRmFUVnpTWEpYZWs5SmVWcExiVGxCZDJ0RGQzRnRNR2MzUjFoVVJXdHdVRTlyVUc5dlYwMVZaVE00UkZsRVoxd3Zhbk0zVmpOUlVWaHJVMGhhUzBaVFRVeEhhemxHVVROcU16RXdSV3BWUnpJeE1YSlZXazFHVFVONWRuUmNMemhWT0VKclducFVTR04zY0ZWUE56QTNXRlE0U3paQ1ltMVVVMVpWV0Z3dk1VSnlSVTVFVTNwUVYzQm9WelpJUlZOcVNESTRNVmM1WjJKa1JVbHZkMmh2TUhaM1RYcE9hV0pwUTFkQ01uUXhXbWR6UTBGWVprbHBhMDAyZGtOd1ZEZGtSbnB3TldNd2VVUkViamh2TlZGSFZqWXphMVZPWEM4M1dUZFBUM05CTVc0NFJGaElObTEwWEM5TU1sZHVYQzkxYVZCUlpuWm9kRXMzYWl0U2NuWkphVTlMZUU5b2VqVmpSa3hrTTIxNmNVZG1iM3BOS3pNMmRsVnVVVGxsTkVsdmQweFFUMjFEWldwdlMwOVVjR3hvY25kWFVHSkNURTVuTnpKUkt6STJXRFk0UWpaa1pXY3lVVlZIY2lJc0ltMWhZeUk2SW1Kak9EVmxOVEpqTldFMk5UZzFZVFkyTVRJeVlUTXlOalF6TjJZMk5EVmtaVGN4WkdObE9ETXpZMlE1Tm1Rd01qY3laR0l5WkdRd09HUTFObU01T0RJaWZRPT0=',1484718939),('e0rzMXPXfFfHBPfo0U6hnKYbRz6qQ7edhmvemhv7',NULL,'52.71.155.178','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.1.25 (KHTML, like Gecko) Version/8.0 Safari/600.1.25','ZXlKcGRpSTZJbkpPYm5GYWEwaElORWRtY2xCRFdVWjFYQzgyZFdSQlBUMGlMQ0oyWVd4MVpTSTZJbFpFV1VoMmEyVlhaVlE0V1VsRFQxcGlTMmd4VlRGblVrSTFPSFl3UTNReGRYUnlTbWxzYnpCbWQzVlFTbE5LU1dSVVZFSmtkVlEzVjFsb2VIWmlWSFJtWTBOeWFXWTVjMU1yT1ZCcWNHNXJNMDVWT1dkbldVZGpjVnd2UzJVd1dUSTBkV0ZNU1dVelpIaFhSR0ZMYldkblZGQjNSbEZQWTJ4U1VXOWpkMlpIZVU5d1pDdEJOblpOZUc5UlRUVjJaMjhyTUVOMFJtSnBXR041TUZCRVlWUTNhV2sySzNsRllsQk9lV0Z3VWtOUlYwaHBkSEpDVm0xeFpWUk9YQzgyYjBKemNHVjJjbTlWU2xGM01uZDZYQzlLWEM5U1NHcENTMUo2YTBoVFMzZGFNRE5IUzFWUFRGUjJPV3NyY25BMVduWkxVMjVzUjBkdFoydE5OamxCTVV4RFlYUmFVRXMyUzJWelVqVmpORUZ2VDBOaFJtOU1SRUUwVFU4Mk9USmxTekU0V0hSblZDdDBVR1JuUWtVMFFVNUVWRm9yTW5SNlNYTnZiMHRzZW5GTFRtUkJkRnBoYzJKbmVHSk5hMXd2UVZoRGJraFRaVnBDYkZWcVZqTXJaWGRRZUdoTk0xcFhNRGM0VDBWRFdsd3ZXRWxOUWpNclUyaDROWGsxYmtRM2FWTXhhRTFQWEM4aUxDSnRZV01pT2lJeFkyVTJaV1F6TVRFMFkyTTVPV05qTW1aaFkyVmhNR1kxTUdSbU5HVTRNVE01WkRKaFkyRXdNRFZpTm1ZMVpXRmpOelpoWkRsalpXRTROamMwWkRnMkluMD0=',1484468539),('fErq2Z5LRpVK0vy27p0F4pekqUcvtNhvPDehy0mW',NULL,'100.43.90.11','Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)','ZXlKcGRpSTZJbU5VVkhwdGJVc3lOVzFzYjB3MFdWTnNaRGhwZG1jOVBTSXNJblpoYkhWbElqb2lOekpoTVRNclQzQjFSVWt4V2xOcE5WZHZVMHBYT1dNM2NFRkxURlJuTjA1aVdWYzVPVEJRY1daWmVGTnVTbVZNUXpWdFZqaHNNazFRYTNKNE5ISmhhbWROVVVOUE9UVTNTazQzZDJaaFkySTFVME15ZGxOQlNUTkVORU5wT1dkWmRreE1LMlV5WVd4SE1YTTRRbE5UVUVoT1pGSkZXazVITUU1bGVWd3ZUVUZaTW5aVVFrWXJXR1kzU2tRd0syWjZPR1ZtUm5GMU5EZE9VbGhKUVRRM1VFTjNUMFJpUzJ3eGJ6VnlUbTVoZDBkQ1NGZFpkbUYxTm5WelZrNUZSbkpaYVVkVlpreFFTM1k0UVVWbk1FaGtXVmNyYUhwUVFuWjZTRFF4Tkdka1VVOUJORk5STm1oUGFYUkVUMHB3ZVdGb1dGZDRjRVpvUjBSNloyZE5SR2RGTTBKemNVbHdaMXd2UlU5bVQwRlFhMHBHV25JeGJIbDRiWE5WV1ZGNmVsaEZTblUwUmpob2RXZENjM05JTUN0VlMzTmNMemQyWkdSemNHc3Jka1JuUkhCVmJXOWhUa1JOU0d3Mk56QkVOR1kxT1hRNVQwTTBSM2hhWTNGTlREaHJkMXBMVHl0b2NGZzVaR05jTDJkU2VqUnFNRlZyT1hkQlNHRTFSRXhCYzJjeVpUWmtNaUlzSW0xaFl5STZJakppWW1NeVlqWTBNV1F3Wm1NeE0ySmlNV1l3WXpNMVpqUTNNRFJoTnpObE5qVTRNRFUyT0RZeFlUZGtZelV4TVRrd01XVmtNbU15TVRNMFpqWmlNemNpZlE9PQ==',1484634559),('FwiZEmdIsHyMBTzJWHXEDDFMtW6caoSwX0a6dsAc',NULL,'5.255.250.12','Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)','ZXlKcGRpSTZJblo2ZEhSY0x6VmlXSGROVUVnNFRHTlRaR0V5ZW0xUlBUMGlMQ0oyWVd4MVpTSTZJak5pUzNSVU1XaDBaVUZrYkVaV2RqTjBWRGRMYm0xY0wySkhWMlV4WTBGaU1tMXJaSFpoWjBzcmVGZHVkMXBwWmpBeU9UbDFRVWswWkhaalEwWnpRMmRaTTBwc1F6aG1aakZ3WVZOdmVIRnhUSE15ZEcwM0swNXVjMDkwWTJ4dGNGcDVSRUoyWEM5alRHaE5RV2QzZFhCeVVGQlhiV3R0TmpOc1NVMUlXR2RIUVVsRFdsbHFjSE1yYmxscFNtSnlSV295YWxsamVsaHZkekZxWEM5R1Jra3hObWQzYlU5NmFVeHVaSGR2VVZWcFJHSndabmd4V1dkUU1uSXJVazE2WWpSY0wxRmNMM1o2SzFsS1IyVXpNbWhXUkdsa2FVRlNlR3hFVFVnclQzTk9OazFEY3pKaWF6bDNaWEpvUWtkWVpEZ3JjVmMyZDBvM1MzbDJXRTVpZURjNVJFNUllbGxFUVhsSVVrSlBOR1JHVEVaNlEydHNVVkZvY0RsVVMwdFhaRVJuZUd0MVNFNDVlbWh4VFhsUVRFdGNMMHRVY2xWVldUTlNVRzAwTmlzd1VXeHVSM2c1Vml0M1lVbDFUVFJXWlZsVFJFNU5WVzlLYlhSVWJGRjZWMFpWUm5WamVGcDBURUowVFRkY0x6RklXbEE0V1RJNVVVNXpSV2ROWm1SM01YRkJWaXRXUjFBaUxDSnRZV01pT2lKaVpEZG1aalF6TW1NNU5HRmhOekExTmpKa1pUTTNNek0xT1Rjek1USXdOakV6TVdVeE5ETTVaR05rTVRWbU5UbG1ZV0U1WkRaaE9UVmxORGd4WldFeUluMD0=',1484576378),('HczsGv0TKMszc9o5YtFygVcWHIqsIoHoZU2vhlVZ',NULL,'5.255.250.100','Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)','ZXlKcGRpSTZJbWcwWjJaVE5HZDRPRkpDS3poRVl6UXJZV1JLVW1jOVBTSXNJblpoYkhWbElqb2laRXAwTjFveWFISndVVWt5VGpKMFYxaEZTakZsU0VsQlFUbGhWV2w1TUd4TFozbGNMMUpjTDJac01YWnhOREpsT0V0TU1GQkVOVXhTZVRSb2EzZ3hPRWh4YWtKV1RtWk1aMnR6VERNNE0ycG5XVk50Wkc1Y0wwWmxlalZjTDBNNFNsd3ZNbkpZT0U5WldEUm5kbko0YTBzMVVGQlBRbmhpWWxCcVJqaFJiRVkwUmpaVk1tY3lTRTFqUjJWSGVua3dabmh3ZW1GRWVGVTBXa3hjTDNwck4xSlFTWGxpUjB0NU1WQkVTMjV1V0haSVVWbEpTa2RtTkdaRVIxWlpLMGswYmpGQ1VXWmpUVlpYV21VME1sbFRPWE5pYlcxcFltaFJNVnd2TXpCSmVXTnZOMFpoWXpoNE5uWnZTRzh5ZUhkbE1tOWFRV1ppTVd0dk1HZHpkVWRHWlVGcVRXcFdlalI2VUhGTmFXOXZWRmRoTkdacFRUZEpVVGhoVVZnMVVFSlhSME5xUWpkWlZXdE5iRFJIZVhCNGVuRnplVXRhVUVkVlVGSkNZMjU1WlRSWmIzZGhTWG8zYmtoUWRuRXhWelkzYjA5VFpsd3ZZV0pEYlZWR1IzRklVamRLYm5kRk5VOHlkVnd2TTBkaVdYaGxYQzlwTURkdVIxRjFia1V4WEM4eWEydHJRV0YzTWpaQlZWUWlMQ0p0WVdNaU9pSTFOVFE1T1RRd01qQmxZMk16WmpNeU56WmxPVGcwTjJJNVl6azNPV0ZtWm1JNE1tSTBaVGd3TVRKaE16YzJNVE13WWpJME9UWXpNREUyWWpobE0yVTRJbjA9',1484810442),('HXhwH3gCTcgTB6q4GnUkVmikdsh4fcmjMdydiWen',NULL,'209.190.113.85','Mozilla/5.0 (compatible; SMTBot/1.0; +http://www.similartech.com/smtbot)','ZXlKcGRpSTZJbFZDV0V0MlRqUkdVM05IVjJWNFlsUmtVR3hTTjBFOVBTSXNJblpoYkhWbElqb2lSSFJsT1RSUFFqQlFUSFpLYmtGNmFGaEtNM1JaU0hkTlZGUnJjV3BOYWtZeE1tcEZaVVpTU0c1UU1UVXlSR2x5SzI1dGJtUnFjR2xJY0hsTFdFVjRZV3BMVlVScmFIWm1TV1k0UkhwdmJtRjJTRTl1Y1RnemVXcDZkV3RhTTJkRlYwazBLelZaVUZ3dmVrUlpTbEJETW5kRFZEQnlUbWhIVVZCVFNVZGNMMVZZT1V4R1JUWnljR1p6WVdSY0wwWk9SbFJCVVVzMGRXdzVORVpGTm5oTFVXRjFVbVF6ZVRaTFEyaFRWRVJEWkhSS2NDczNabkF3V1dORU1rdGlOelIzTWtJNGJGWXhOekkwZG5GWk4yTkNUSFpVTlRGVFdVbHdPVFZTV0RCRU1FOTZURVZKUjBsNmFra3lWbnBQY3pKbFFVVkdkVUV5Y1VaM1JrbHRlRUZQU2xoRFFXbHVaWEZMTjFFeE9UQldkRTB6YlRoWVRXNVdZeXRjTHpSM1RVODBSMWxoYkRSUk1HUldLek01UVVaTWFrTkJjV1JCVVRNNVVGbHphelJ2VlRCcFJHWTJjVGwyZVZWR2FWcEdOMHN5VG1wb2FVRm1OMU5NZUVrclpFSnhSR3BTWW5kQ1RXTlNaVUZQUlZwa1JITjJVM3BOYW5wemJubHNkWG8wT1VaUGMwdFlNa2xFVmtRMGJtUjVRblJMVGsxeVJVRnVWVFJyWjBFOVBTSXNJbTFoWXlJNklqZ3dOamRtTmprMll6VTVNak16WVdKbE5tVmpaV001TmpnNE5tWTNZMlV5WkRCak5EQTJOMkV4TWpjM01tWTRNR0l6WWpRellUVmpZekpsWkRKak56WWlmUT09',1484718931),('JZpybhrKXaUAML1Fmp4QMdjweDn42IEztpubTN2F',NULL,'176.9.50.43','Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36','ZXlKcGRpSTZJa1IzYVU1MVNuZHhVU3RhYWxWV2RGZ3pVREZaVlhjOVBTSXNJblpoYkhWbElqb2lXRE5JVFZCU1pWQm5SV2g1SzB4eFp6Wk9SM2hDWlVNeWEyNU1ia1pqTVhrNVVUQlpRMWhMVTNwclQxWmhjMVpMTjBWRFVYcGlaek56VmtSWmVXMURXa1I0V0VneE5WTkthR2RpY210a1Z6aDZURzVoUWpKR1pHRlhOMVJKYkZ3dlIxWm1UV0pDWEM5MVN6TnlNVFoyUkRkTmJrbFVUM3BPVTJSYWJYaG9PSEZwWEM5bWNEaFpOa0YzWlRsaVdWUTRhbFoyV2xGbGIyeHBOblF3ZUdNNWFYWTFWWEZGVVU1UFZXNW1hMU01Tlc1a1NWTmpXV2RxVWtkeFlrZGtZVkJUUzBGeVFYWmpRMDR3ZVVKV2QyZG5lV1J1WlVzellrOHJhbHd2TmxOQ2RXeGhhR0p6U1ZKVVZsVTNVRXBJYW5GaU5FWk9jemw1TTJKWmFFaENjelowYmx3dk9WZFdjbk5IWW01MVZGZzNWa0Y1Wmpsb1ZHOU1NbmRKZFdaRllsaDFjbFZMUkVKTVUydEhUbXB5WVRKNlNteEpRMmxaUVdWd1NqRm9OMUJvVjFWemNqWnJhSFpQYjA1WFpqUmNMM0pGWEM5UlkxSktVWGgwYTI0MmNteG1RMUJ0ZVRKSk5FdFVlVFF4WVVNeVlVWnBNMFZWZHl0WFNWd3ZSbmxNTldWQ1dEaDFlV1JLTWpnaUxDSnRZV01pT2lKak1UWm1NekF5T1RnNE5UazVNamxpTVRsall6aGtZamN6WTJFMFlXUmtaR05tWVRZM1pHTmxaR016WVdOaE1qSTFObVJqWkRNMk0yWTFZamczTnpReEluMD0=',1484298874),('KIBaNIYoN1VFoK3YIPflrcWcMqaSu5PYveREGAOn',NULL,'38.100.21.66','Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.2)','ZXlKcGRpSTZJakpqYWx3dk5tRkdRMk01Y1dGWk1IRklZVWh2TWxOM1BUMGlMQ0oyWVd4MVpTSTZJbWRxUkhkUVhDOWlWR1kxY2todmVFcDFPRzk2WlRSbU9YbDNObEpEZG5KU2VsZ3JNbmt4VTBKWVRFRlFjRGhXSzB4YU9EUmhjRWR2VFhWTVNWTnJNVGRLYW1GMVJ6QTROMWczV1RGblkzSkVSVFJwVXpWTFpscDJZMDByTnpnM00zTk9TWHA1ZFRaNlkxRlFlVlFyYVdVemJ6VmhNRW81ZEhwWFYzVlFTRVJUVW5jM09Wd3ZRV0ZIYVdsSGQzWk1TbkZhVkVWaFIweGlLMHQ1TVc5YU5FSk5RMmxTU2tWUFlrcHlVV3RxTVRJd1ZWTXdNbTlpYVVKbWIweHBkbVpTU1dvNE1WTTJhRWR6WmxGVFdrZHFlVUYzWmpGd1EzSnhObXB3YUc1SGEycHBTMmN5WlVOb09FWmNMMHRSUjFnNU16ZERiM0pwYkdaR1owY3JVMnROY1dnMU5UaDZXVnd2VGxObU1UaGtOSFoyVmxJd1hDOTVkVEZjTDJOVE5FSmNMM1pRU0ZScVFUVjFVRVIwZGs1Sk5VdEtTRmxyYmpGMlRGbzJUbXBFWW1NM1pGWjRNU3RXZERkVVIxd3ZNRlJyTm1wNWFqWTRZbGw1VjI1TmR6bGNMek51YVdGa1dFVkJkbTF6VEUxSVJrcGFkMUpLVVRoa1JGUjJaU3R5YUVWbWVHdGljRVpGSzBoSlRTSXNJbTFoWXlJNkltWmpNMlJoTnpneVl6RXlNMk01WTJNM1lqQXpOV1V6TjJWaU16Y3pNVEl4TnpZNE4yWXhNbVk0WW1NMU5EWTRNalZsWldVMk1tSmhZek0wWlRNNE1XWWlmUT09',1484300570),('MHJ9M72D3D8MCdFFgBvzRaVgDvSOJFHF91YYlICw',NULL,'141.8.143.138','Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)','ZXlKcGRpSTZJa1o0WVV0NU5ETldTMUJzTnpkV1RuVkxRemhDUVVFOVBTSXNJblpoYkhWbElqb2lSRnd2V1U1aFpVeEtTSEp4YnpJM2EybEljR1pEWnpOWFNVNXVkWE5XWnl0aVNHeHlUa0pIZEZWalExZG9Za05rYmpsTFpuSkZXRVpZUXpKc1VrcHhTVTV5YUZFeGRERldPRnd2TlVseWNqUk9WM0psUTNZMVJHVnJUbmNyZFZJMU1WWm1NbVptVlhjclYwaHFOR1pKUlV0VmNXWTNkRVZFVVdzeE1GUmFhV05hUlZWTGEwOUZVVlk1V2tGcFFrSjFlV3Q1ZGtGWU5YaFlPVkpKVG5SdFdUTjNWVTR4WTBrclNHdDRRWFI1VUhSaVVrUTFSVGs0ZUdsUlNrcFBXVlZ0VkdsYVZVcFlkVGxZZUVSd01YTk1jRmc0VlZWNmFWTlhjblYxZHpKRk9IazBTazRyWW1wVllrZHFjM2MwYXpVd00zb3hWRWczYTJoMWNVNTVUV04wTTNSa04yazJSMDlWY2tFck4ycGtOVGRUVVZKNE5EZEVlVTFrU1cxY0wwbFRSR3R1V0ZaRFRsd3ZVR0pvUjJKVlQwcEZOMVU1UXpOeGVsUkthMnR1YkRaWmVESXhZMEZoUTFKVVJHbElhMnhJT1VoS1dITlJhbGh1Y3pCaGJHUk1PVk5GUTBrM1dETmhabkpHU1ZSb1pVd3dRV3hOVFZKQ2VXZFFTRzVwZWxOWFNDdHNiU0lzSW0xaFl5STZJak5qTlRJeVkyVm1PVGMxT1RGaFltSTNNVGsxTWpSbVltSm1NRGxpTnpBMFl6RTJPV1l6WTJFNU4yWTNOak5pWmpReFlqbGpOemd3TnpjNVpqSXpNVGdpZlE9PQ==',1484224583),('mWSuuQ6kUIqkh87Xk0F47bc6K6Xglkrjm1DPPsM3',NULL,'76.186.126.92','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36','ZXlKcGRpSTZJbWhqTVVkNFJsSTFZM0JVWkVsY0wyUnFORkZRUlhKM1BUMGlMQ0oyWVd4MVpTSTZJa3BQVGpSUlZIbExUVkVyYjFCdFRIWjZYQzlQWkRObU5XaHRja2QzWmpCY0wyeHhjM3BQY1hwS1Fsd3ZTRWxRVWtnMGVXMTROVkJPYUVsdVdtbEZSMEozZEZNNVdWVkdOMEpqWjFscGVFeGhhSFpEWjJ0a1kycGlZMjUzUm14Y0wwb3lWelJKVFZocGNERnRRbkZIY1Vzd1VEQTFUMnhwZDNCMVFUaFRhMHhZVEU0MmIwSjZORkZ4ZURBMlRWUnFTblZpWm1oWFNtZFdiMHMzU2xwRFFqTjBXazVhT1hJMGRHcDJVVVpoT0RoQ1NtRXlObmRWTlVwamRUWkhlbko1Wm5WV1ZUTmpaU3RKYmtGVlRIWnpZMVJPYjB4MVRuaHNNVGxtZGxsNmQxUXlha1p6ZGtaTmJFZGxTMGQ0VDBNeVZuaDRhVGRVV0RCWmNIY3pUSFZyZEdoTFYwRXJlbmxHTUVWU2FIaExhRlZuZW10S01VMVJaWFJUV0dOeU4wTldRemxPZEhRM1JVRTVRVmR1V0VZelZHRlZRWEJPYUVsSFpHRllUM2d5YlZKUE5GSkNSRU5WWjJSR2RXeFZWMFp4VTF3dlMyTk9NR1p1UkcxSWJXZHVTRmh6TlU5aVJGd3ZRbFl4WmpGYWMzbGpWeXRQY0dGd1EzTlNOek1yYVRVemFXSmxVbmRRY1NJc0ltMWhZeUk2SWpJMU9UVTBPV1ZqTjJJM01UWTJZbU5sTm1ZeE5XTTJOemRpTURWa1pXSmxORGd3TXpNME9UQmtOR0U1WkRoaE9EZzNOemRqTVRFelpEQmlOemN3WkdRaWZRPT0=',1484704605),('Nj0Dop5dXvy4nyUgXbrUIv1UB9MjumnwATq3JyZj',NULL,'209.190.113.85','Mozilla/5.0 (compatible; SMTBot/1.0; +http://www.similartech.com/smtbot)','ZXlKcGRpSTZJazRyV1dZcmJXc3hXRWN4WkZNNVEzSmhUalp6WTNjOVBTSXNJblpoYkhWbElqb2lTQ3RJYjJsc1dFUlJWSGw0U1d4RVExbDRjVlZSZEdGSmVGWlFSRXRUY0dsdWRIZFdUbFpuVFRKR1NVdzJiWEZEYlVNelNVRnpUSEI0ZFUxb1N6bFpRM2RNVVdVNWRWQlJjVEYwYVRsTVNVRjBRMWhMZFZKT1VVSm9jWEZvV1hocGIyaEtObFJ1ZDNob1FtMVNWVUZxTVRaSldHMURablJ1TTA5VFQzVmpTRVpPWkc5NldqaFlNMUZvUkdweFpVRkZZbG95UXpsb01VdzVRMUpvTlZrNFJ6WnhRalJvYlZoVWNDdDVTRTF3UWtGUVdFaFNVRTQ1U2xRNU1HeGhWRE16WmxNMVdqQTFRalJqTlVablpUTklTVWxtTW0xc2IxWXhjR2h6WkhadVYyMXpPWEZWVTJwTmRrZDNSekpqYWxKRGEzWnJUMDFWYVVSM1YyTk5RVFZXYzI1elFuRjNNRzlZTW0xM1JFbDVUVGhaZVRSUmRGbEViRzVyVjBac1kycEVOVVppTVV4UGJFNVFjbFl3VkRsNlVsVlZaalpLY2xkcmQwOVFXSFJxTTJwMFoyaDFZbGxCUWsxb2RYbFBZVXRsY1doVmFrVlpZVnd2Y2podGJqZEpUV00xZWt4T2FVUmxUMVJxZEdaS1JHWkxTelp1WEM5WWMyUjVZekozSzFVeVF6RWlMQ0p0WVdNaU9pSmpabU5tWW1FNU4yTTNNV0ZrWkdJME9UQmtaVFV4WW1JMllqZGxaRFptWm1KbE9ERXpOVFE0WlRneE5qUTJZMlV6WkRVMFpUWmpZbVkzTVdRd09ETm1JbjA9',1484718928),('npe03nvH0SF44xCyL6xZcuP4ZnYru4VzYrySSnEQ',NULL,'64.246.165.210','Mozilla/5.0 (Windows; U; Windows NT 5.1; en; rv:1.9.0.13) Gecko/2009073022 Firefox/3.5.2 (.NET CLR 3.5.30729) SurveyBot/2.3 (DomainTools)','ZXlKcGRpSTZJbE0zYm1ac1lVbGxiSFJHTW0xdFFXMVJlVXBGUjNjOVBTSXNJblpoYkhWbElqb2lUU3RvUlZOSVpVZzBSekp6VlhaRVp6VkpjV2RTYW14NFltTkRUbTVyUm5FeGNUUnNURzVoVmxOR1MwSnNhbG9yYmtwWFNXRk5NRVJOSzBzMVZGSmlkMWs0VGxkd1pWRmpWazlLVkRGa2MwNXZUMGROVGtFMUswNXFURGhhTlRSTllWTjVOR2xpTXpoUmQwcDFZbUpCTkRaclMwMVdUbFZ2UmpKM05WRmlObkJrUVZOa09ETlBhMUkwV1ZaWmVHOUVlV1pWUm1GdUt6VkViekY0UTJkcGJETm1UbGhKYXpRcmJGVXhZMVZOUjFJeGFIcFdXa0ZsUVhWU1QxRlRXa3RrYlU1RU4weFRLM2x2WkhnMU5VdFJLMHQ0YjFGMGFYY3lla1ZtUVcxNVNEbDRSVXR3ZVhaaVoza3ljVnd2VFdGNlZWRjBSM2g2Y2pjMFp6bFlZWHBCUzBaV2FqRnhaVFo1UTJGaFVHbHpXall5WTFWbFRsd3ZRa0pCY2pKeVNUVk1RVTVyYjJ4c1VtNVFUblJqUjNSRFhDOURhVVpIYWxSVVlXeFFUbnBIT1hOdGNqQmthalJvYUZWSWEyVkRjakZ6VDJRNFpIRnJXbU5MZUdsU1VtVmNMMnhKTWpnNFVGVnNORGNyWVRGc1RXTmlTVTlsVVhoSmVWQk5aa1J4SzFoM1VFeFVZaUlzSW0xaFl5STZJakV3TjJOaE1qSTVabVJqTkdFelpXRmtaREV3TUdJM09UWTNZV0U0WldWaU5qWm1aVFk0T0dFeVlXSTRaRGRqT0dRNU16aG1ZakF6WlRnMVpEVTBZMllpZlE9PQ==',1484543803),('OvcRbvvCzFmFJzDWylWvxfkeTbl61T0hOxWTaZHO',NULL,'95.27.18.171','Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.142 Safari/535.19','ZXlKcGRpSTZJbUZQZUdaaVZtRkRReXR3TlZWclRHOU5RMEZ2V1djOVBTSXNJblpoYkhWbElqb2lVMXBDYlhaU1RqaEtRbVpZU0ZGc1pHZHZZemRYZEdObFEzVm5aRkJRYTBOT2JsTjBTMHhvTldoSVRFRXJjMVJYUkhSNmN6WkVkbUV5YkhaRk5FVllTbmwxVGpWSmNIcExTSEp6YUhSaGJGWmxVMmRGWVdaeGNXbHJSbHd2YnpRNFdUTnZiQ3RYWkROeWNrMVlSRGw0ZEhCQ2RVZENUVkZDY1RocVExRTRkMGd4U0ZkMlZqWjZXR0ZKVlVGUlJsaE9XbU5yZUVSUFUxSnlZbEZoVVdJemFuaG9SWFU0TlZGaGIyaDZSemx5UWpGUVozZzNTRlp4ZW5wUFVITktVa1JCZGl0dFlqUlRaa0pjTDFkM01tOXZjR1F3VDJwdWVXVlVNbWMyZVZNM1lsd3ZYQzlEYTJoVlIySlJjMVJoYzI0cllscFRZMFV4ZG1OYWRFbERXRlprV1V4b2RXTm9VVTFYYWtNNVJXZFhXRVJXYUVaNk5FdHFUVTlEYW1OMVdVUjNja0ZZTkRkdU4wOUNPWFp6YUVoamVGUXJZMmh3TWtSdlNtVkROVFI0UnpGa2FFTnBWa2hDV1RJM0t6bHhhM04zVVZZMVpFY3liVVZqWlhObVVYZG9jMHg1YmtObWVrWmlZVWxYVVdsdVJGVkVXR1pUTUhwd01tSktTMmRTVDNkclhDODRUV1VpTENKdFlXTWlPaUl3TWpKaU1qa3dNVEpsWVdFNE1HWXhaV1V6WkRaallXRXpPR00xTTJZek1XWXhORFJrWXprMVlUUTRaRFUzTkdJeE5tUXlaV1V5TnpjeVlXSmtObU5rSW4wPQ==',1484308714),('pHCdbKCRHSAxwg3WaSRHP0e5Oc5V7D793bkKejJm',NULL,'209.190.113.85','Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko)                 Version/6.0 Mobile/10A5376e Safari/8536.25 (compatible; SMTBot/1.0; +http://www.similartech.com/smtbot)','ZXlKcGRpSTZJbFZWUjNSVVZ6VXpOREZYYlRoMlYyOTFiVFJaY2tFOVBTSXNJblpoYkhWbElqb2lXVWRuVFZaWldHVmNMMnQzVjBSaVptdGpXQ3ROWEM5YWVVRk1PRUkxVUU1blNFSnJUakJRWkZ3dlNuZEJjRkZYVkdOWFQxbEhhRXRtYVd0aU9UZ3hWa3RQYjNoaU5Vc3lUelJNTkZ3dmMwTmtWWHB4VjBkTWNrVjNWalJuUjJKUFRWUnpla2cxVWs5RmVUUmlSVWt3ZVVwalpIZHZVV2xxT1VnMmNraFhXWFpjTHpWS01URjZkWFpNTVhKc1dXOXdUMjFyT1ROVVJFa3JNVXhsWnpaSldXZHlVM0J1YnpaUFRHMXpVRlpTYzNkSFZscHpaRWxRVkdNMVoycHFOSHBJYmxocFJtaDVWVUlyUTFWWE5XbGljM2w1Um05MFUwWldhRzVsUkZNM1lWQlJSWGx0T0ZOaVFrdHhZbWg2U1dGSVZuSTVlbFZwYkU0MWJYVkpOV1ZFTVdsQ09WSkRiV1Z3U0VGa2FrSlpSVlZZVmx3dk1GSktTRkJzYUhZMWNVZHlaMHRKVEZKWVkzTm1XV3N6VHpWYWJEZFVRa05yZHpOWmIydzNOa01yYW1VeGVEVmNMekpKT1c1TFNGUkdRMjFQYjFNd0syMVNZbGM1VmpaSVEzTXpaVlY0UlhKMk5WaGxXVko1UVc1c1VHUjZRMVJITmxocFpsRlFlVFJyVm1KS1JscHNkRGR4TmlJc0ltMWhZeUk2SWpVd04yRXhObVUxWVdaall6aGtPR0kyWVdOalpHSTVZbVUyTjJOaE4yTXdNRGxsTXpJMk1XWTJPRGc1TURVd056Y3pORGhtWm1WbFpEQXdOMk0zTW1NaWZRPT0=',1484718922),('QsONvqjHCwhEV2OnLEtAZf9LaIdrIPmvHCNybJ3r',NULL,'5.255.250.100','Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)','ZXlKcGRpSTZJa0pwUWl0ek1rMUhZVW80TTF3dlZVTkhZVVV6YVdaUlBUMGlMQ0oyWVd4MVpTSTZJakJuUkRGRmNFbFRNMjA0ZWpKWFducE1WVVF3VEZaM2NUaHhaMkZjTHl0NGJuVnVaSGRIVERoeE4xQnpSMVZyVWxWd2VFUjZNbUV4Y3poM05qQmNMMUo1ZGpKSGNUWmpORXhZWW5GWFYwRlJWa2t3UTBkQ2REbE1aSFpPT1ZWTk5EZFZSbXBPV0dKbWN6SlRaVkZKU2xOSmNVNDJjMWRJVUhaRmFuaEtSbGhvVm5OS1IzRk5LeXRuWlROb2IwRllhemh1TWtFclNqTlNhVmd3Y1RGVE1EaDZia1l4V1ZsWFluRXJUbFZUV1dSNU1uSkZlVzloU2l0RVptbE9RblI0V2pVeFYzYzRVWEZCUlVJck9IWjZkekF3WWxOM2VtSkZNVWw1VDNGeU9FWllYQzkwVEdGUGJVaGhhR1JNYVcxY0x6WTVRMDlsUmtZNVFrZE1kekp6VXpGU1hDOHlRVkZ6TjI5dVdrRklTamxLV1hKT09HeFpTVnB5UzNoVFdETmtTVXBHUTNSUU16QXphRkJvY0VKd2NHNXBhbUp0VURSQloyMTJZMGQ0WkhvMGVqaElVbk5MYlRkM1lUbHpUMWxsU21aM05VdEVjVnd2TnpoalV6UkVkbnBHVEdwU1VtNVpTbFJzSzFReGFtdFFRemRPYzI0MmJWQklaVzF5T0RCbE1HWmhXVXRxVXlJc0ltMWhZeUk2SWpNelpESTRNVGd5TVRObFptWTJPV1EzTUdSa09EVTNNVGRqTm1abFlUazJZemswWWpGaE56aGhaR1U1WWpZNFlXSm1PREk1TjJGaU5HTmxOMkkyT1RRaWZRPT0=',1484473695),('RLCxXoaLcicN56miKp6uEjGs57v0bmzAJcAUbxO3',NULL,'209.190.113.85','Mozilla/5.0 (compatible; SMTBot/1.0; +http://www.similartech.com/smtbot)','ZXlKcGRpSTZJbFpwZWpSMVZWTnBVa3RUVTIxSVVGVnJaWFJDZGxFOVBTSXNJblpoYkhWbElqb2ljamhoTTJ0b09IRXhUM05VZWtGY0wxSTBURlJtTjI5eE4xbDJNR2M0UVhOMmEybFlOVTR4VXpCb1RHdFBOaXRrYWxNck1uSk1Vbkp5ZGpZelNIUnpObWhyWkV0SGNWRjFlVU52Ylc1M1ExcGxTRWxOU2t4UlZUSnBRa2h5ZFZCc1hDOURRek52YUZoeE5scExjbmhWZDJ0SU1sd3ZjVFJtY21wV1l6RmhRM2xtUkRScU4wSktjVVpPVVRSMFZIUlpUVTFaWkZWeGJUVk5lVVU0VkhaWVlXUjZjVlpVTkVwY0wwUXJYQzlqYUhWYVFtVjFVR3R0WVhkQldIRmlPVTQzWkVsTVYxbDJiR2N4VnpKRWFsaGpiV3A0VDNwTlprVlhOMFl6ZHpRNGMyMVBVV0pJWTNSRlRXWXhkVlI2YVdGUFpYWkxjMHBjTDI1S05ucDJUVzF5VFhGUFVEbGFZbEpRWTJSVVpFeFRjMWhXUlRoMU0yZHNTR1puWTNsd05uQnpPSGtyUlRGSWVYQnJNMHhJY2pWVlZuSnJZMndyYlRWU1pXUjBka2tyYjFwRVUyZFJNalJNTUVWcWFIcDZRVmhaUzIxQmFIcFNNMU5RVlhKYVdWWnlkRU5uUldSUlptNWtUVXR1YUZKWWVqQkpjV3hqZHpkcmVrcHhPV05CVW1WY0wzVnVOVTVrZGlJc0ltMWhZeUk2SWpCbVpUQTFaR1ZrWTJJM05qRmtaakU1TkRJNVlUWXdZamxsWkdFME1tTXdPRGc0WkROaFpEWTNZemMyTldNNU5XWTNNalUwT1RRek4yWmpZV1l6T1RVaWZRPT0=',1484718919),('tAgw8nTiuPRMnIhAa87BRabyjAG3fNaI0QG2DAfw',NULL,'64.71.201.8','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10; rv:33.0) Gecko/20100101 Firefox/33.0','ZXlKcGRpSTZJbGhJUVU4ME4yRlFZakZPUWpZMU5qaFdOWGd5UzJjOVBTSXNJblpoYkhWbElqb2liekJpYVVaMVprRmhiWEJMVHpKdFNXWkVNVUZ1ZVRsamIxaG9SMGRyY2prNVVFRm9jbGdyVW10VVFYSmFRVEIzY0ROVWNHdEtNRVl6TUVRNGIydHFkbkJUT0dKek9GZEVTV0pXYm1kMGRXTm1SMmwzUVdSc2RGZzJRVnB6UTJzclhDOUZNa3N5UTJSaFVYUkNjVEk0UjNNNFZEbHJaVTE1UVZBemNYZEJWbGM0Y3pGUWJtSmNMelZMUjNOa04xbEJkek0wVjJaNlFrcFpUVlZuYTJwT2JETlBTakZYY1hsTFNtZGlTREpuUVdOblNHeG1XRmMyUWsxWmVsbHRSbHd2VVdVclZFTktWVU5VU1ZsUmRHUkhURWhGSzFOV1lYQjZXWEZMV0ROT2Jsd3ZTbTVWVlc4emNsbzNVSFY2WEM5NGVVVnZSbFpuTTNGWGQzTjRRV2MwV1ZoclMyeG9PVFkzTVNzeE5XdExVMlpSYkc1TmJFbzBVa2d6Wm5SdWExQTBNbTlRTWpSeU9HMUtjVnd2Vnpod1pIWjFkRkZUU0hWUldEazVWa1ZuVTJFMmEya3haWFlyVUdVeVhDOVpXWGxDZGt4b1ExQmlXVXBFUzBSdVdFNWpRMUJ2T1hoU01rdFZUM1pwU1RWeU16VnlWMDVsTW5GRGJXeGxNblZsWW5VMlpXaHJiV1pzWVNJc0ltMWhZeUk2SWpVMk56TTRPVFEzTURjNU5XWmtNRGd4WkRGaE5EVTJPRE5pTkRnNU4ySXdZelJtWldFMVlqVXhNbVU1TW1WaVpqYzRZMkppWkRsaE56WmpOR1poT0RRaWZRPT0=',1484464396),('TBPZHCCFjyhCA490SrB7ejlxX18xp3TwRMa0z8LL',NULL,'128.69.225.174','Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.142 Safari/535.19','ZXlKcGRpSTZJbXh4T0U4eVJtcHZjWFpoVVdOYWJFNXhiRXBqVUhjOVBTSXNJblpoYkhWbElqb2lWV29yZVV4dFVYaE5WMVEySzBnNFZuTjJXWFoyUjNCVlRGRnNVVFpzY2toVmFUVnZPVGhVT1U4clZ6SnNUSFJuTUN0bk0xWjFjMlZ1TUZRMlpETnlaeXRzZUd0SEszTjVURmRIY3pRNFdETkNkRkF6VjFvMVREVXdNVWxWU0RVM1owVnFVamgzTUhwaE1GQkVVVXhWWW1FMlNUYzVhbEZRTTJoRmJ6RnlYQzlqUTJoSFFuSkllSEZRTjNCRFduTlNXR3RtY2x3dldYQlNZeXRWVUhGbU5GVm1ZWGhRZEhremFuSjRPVGR0WVhONU0wTXpaWEpvUzFOUlMweFlZMnBwYmxCMWRUZEJVMHQ0U0hWa2JIWnlRV2hvUVRGVk9EZERNRXhaY21WWGJVVk1ObmgyWTJ4bFFURmFWRTV3ZERkV1hDOHpaRTVhY0Z3dlkwTTNkVWxFZEVKbGVtbGNMemxyTUhGVVZ6VnZTMkZHZVZ3dmVHNTJWRU0zZHpBMWRGd3ZlV1FyWVhkbFMzbERXazFKTTJkMFQxd3ZaWE5pWlVSV00xSmtNRlY0YUhwMWJ6WXJTV2hNTmxwbVpqUjRjSGhTVVhONFZrZHBSazVZVUdoTWVVdERVek16T0hSelFtTTBjM1ZCTWs1NldFZDNZWFZWVVRaY0x6WkJNWGxyWkhOY0wxWlRTRmQxV204emRpSXNJbTFoWXlJNklqWXdOMkptWlRrMU1XWXpNV0UwWmpGbFpERmhOV0UyTm1JM1l6VmxNVEk1WlRneVptVXpPRE5rTXpoaE1qUTBPREF3TTJNNFltWTRNekU0T1RBeVpUQWlmUT09',1484348168),('TdrxSkv1dVYx8nud8PZoc5H5HhRBRwMncvYL0FJU',NULL,'38.100.21.66','Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.2)','ZXlKcGRpSTZJbkF5YWxoWFEybElWVTkwVmxWeWJEazRNSEF4WVZFOVBTSXNJblpoYkhWbElqb2lialkzYW14T1JFcEdNblJsZWtNeVFuSlRNa00wZUhGQk5sWmFTMnhaYW5FeWNGcFdSSE5UV2xsM09FMW5VVm8yVEVnNVRtWkxSbFZNVG0xb2IzQldZVFpvVldsdlNYWnZZVlYyV0doS09FMTVaakJVZW5VMlpUbFdjR1ZYY210U2VucE1jblZNU0RORmNubzNVMjh5ZUVkUVIxTlBPWHB5YVhKRU1GZFNOU3RFWkd0dVV6TlpWRlEwY1RONlZWWlBkVnB5UWxVclNscG9WVEpYWTJWelRYbzNLekZKVTBwMFowZzBlR0pXZFRsMFJrMXhXR2h5VkUxMWVYSmNMMlJGTTJwVFhDOWhWVEJFUVhCNmRHVXhUWEJUVVhkRFRFZHhXV0ZqU21KSVlVUnVTRE5hSzI5UlUyMUVRa0ZEYTFoSlVWUndZa1ZJYlZOS05sZFNTV3dyVWpWRVMyTTBVSGxrU0Zab1MyZDVhMEYwVEhobE1GRjNlbGwzYWtRNVYzUjNhV3RxZFZaUFV5dG9XRmxYYkZ3dlVHaHBZVFowTWtGbVFtNHpTVmh2WkdkR1dEbFpWMUZKV2l0eVN6Uk5PVzlaUmpOR0swTm5aMkZ1WlU0cmJWa3JSVlUzVTNBeWJHRlBlSFpGWTBoWlkzWXJWelZSZW14ekt6UjVZVXBSY2xwck1HaDZJaXdpYldGaklqb2lOR013WVdaaVlUQmtOV0kwWldZek1UQm1PVE16TVdWbU9EbGpOMkl4Wm1JeU5UQXpZemt4T1RZMVlUSTRNV0kyWm1WaFlqQmtNR1JoTWprNU5qWm1NeUo5',1484300570),('utEdG6SJPm5LoMO1SWF5chbt3C2chfU1XHAN8FrS',NULL,'209.190.113.85','Mozilla/5.0 (compatible; SMTBot/1.0; +http://www.similartech.com/smtbot)','ZXlKcGRpSTZJa2hsZEdVcmVscG9TRk4xU1ZwUk1FRm5TWFk0YWtFOVBTSXNJblpoYkhWbElqb2lUVlpCZERrcldIbHlSa2wxTW5SMVlXbDVTVVZYTlZ3dlZuTkNiVzE0V1ZvMGIzaFhWRWx0Ylc1VFF6TkdNREJsV2xBcll6VmlZM3BUV0VOSmVHbFpabkJ5YkUxMGJXdFNhbGdyZDAxV1ZuQnFiV1JsVDJ4aWRHcGhaa3MxZUZ3dlltbHRLelUwY0hWRE0wUmFVWEl5YTBwWWVrOVdOR0kyUkc4NFdXUndTRGROUzFSUlVrRlNVRXd4YmpsVldXaEdieXR2S3pKeVFrcG1URUl4WmpVeU4zaFBlVTlyUjJKeUt6QjFSMWM0WEM5c1owNDVlbFJHWms1NllqTkRNbVp2WVRsUmRWazJRbmRoVkVaWGEwdDFWVFEzWjFwblFUTnhNMjQ1VTNsdlVEVmpTemhpVW5kb01raHBTRFpGVVhKUWNWaFdNbE5WWEM5Rk9IRkRkU3RVUmxFNWRHdEpLMFZJZWtsY0wzTlJXV3hvV2tVelV6RlhRMm96ZDJJMVltVTVVMk13WVc4cmFYRmhaV1Z4Ym1sVlJIcGFZMjFQWVdzMldrWlJUamhNTlhaY0wzUk5aVnBSUVhGUWFVbHpXWEY1TlRObVdWTlpSM3BVYUV0TVJWcEVNWGMwT0c5VVFtRk9lVGgwUjB0Qk1FVjZkMm94TTFGNVFrOVlORzR6U1RnMU1FMXVZMnB6SWl3aWJXRmpJam9pTURKbVlqTmlOekZpTURBd1ltRXpNbVk1TXprM01UaGxOakF3WVdNeU0yWTVZbUUwTmpjeFpXVXhaR00yWW1NeE1EVm1OREk0WW1NeVlqVXhOemcxT0NKOQ==',1484718934);
+/*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `salt` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `register_ip` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `forget_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `active_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `domain` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'2017-01-10 07:03:01','2017-01-10 07:03:01','Sarah','Renner','srenner','sarah@sarahrenner.work','$2y$10$YrC0uz5Viv4.UWzXAPccR.2l.bKO.9uGSQ5b5f3YY9jHfuM0e1ZaG','','127.0.0.1',NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-01-21 16:46:15

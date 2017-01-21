@@ -113,16 +113,16 @@
         },
         {
             "name": "cloudinary/cloudinary_php",
-            "version": "1.4.2",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cloudinary/cloudinary_php.git",
-                "reference": "327f2db5767ceb8a19d51785e1b60e86674a6a2e"
+                "reference": "1ba1daac2a616a4e99a2fc9f652f00775115e6f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/327f2db5767ceb8a19d51785e1b60e86674a6a2e",
-                "reference": "327f2db5767ceb8a19d51785e1b60e86674a6a2e",
+                "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/1ba1daac2a616a4e99a2fc9f652f00775115e6f5",
+                "reference": "1ba1daac2a616a4e99a2fc9f652f00775115e6f5",
                 "shasum": ""
             },
             "require": {
@@ -161,7 +161,7 @@
                 "image management",
                 "sdk"
             ],
-            "time": "2016-10-27T22:02:47+00:00"
+            "time": "2017-01-19T12:41:48+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -533,16 +533,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.5.7",
+            "version": "v2.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "3a351369582dade60c750e2cef540eb7b568e6b3"
+                "reference": "0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/3a351369582dade60c750e2cef540eb7b568e6b3",
-                "reference": "3a351369582dade60c750e2cef540eb7b568e6b3",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e",
+                "reference": "0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e",
                 "shasum": ""
             },
             "require": {
@@ -600,7 +600,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-01-14T21:05:28+00:00"
+            "time": "2017-01-19T13:27:33+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -969,16 +969,16 @@
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v9.2.0",
+            "version": "v9.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "8030d35e5cd9c8ead1d13db92198ec9b0e232369"
+                "reference": "b2001ce4e992ca473af6f470cddfcf6e0a83430d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/8030d35e5cd9c8ead1d13db92198ec9b0e232369",
-                "reference": "8030d35e5cd9c8ead1d13db92198ec9b0e232369",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/b2001ce4e992ca473af6f470cddfcf6e0a83430d",
+                "reference": "b2001ce4e992ca473af6f470cddfcf6e0a83430d",
                 "shasum": ""
             },
             "require": {
@@ -1002,7 +1002,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "9.2-dev"
+                    "dev-master": "9.3-dev"
                 }
             },
             "autoload": {
@@ -1034,7 +1034,7 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2017-01-01T13:18:54+00:00"
+            "time": "2017-01-21T16:49:20+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2358,16 +2358,16 @@
         },
         {
             "name": "maatwebsite/excel",
-            "version": "2.1.8",
+            "version": "2.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
-                "reference": "d9c398f7eba0ac9caf9c104dd0d55bd6a5ff231e"
+                "reference": "b004c99b1d64c207b95a41f20392b3c0eabb8b04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/d9c398f7eba0ac9caf9c104dd0d55bd6a5ff231e",
-                "reference": "d9c398f7eba0ac9caf9c104dd0d55bd6a5ff231e",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/b004c99b1d64c207b95a41f20392b3c0eabb8b04",
+                "reference": "b004c99b1d64c207b95a41f20392b3c0eabb8b04",
                 "shasum": ""
             },
             "require": {
@@ -2421,20 +2421,20 @@
                 "import",
                 "laravel"
             ],
-            "time": "2016-12-09T19:11:09+00:00"
+            "time": "2017-01-17T12:07:20+00:00"
         },
         {
             "name": "maxmind-db/reader",
-            "version": "v1.1.2",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maxmind/MaxMind-DB-Reader-php.git",
-                "reference": "571279051c3339414dc91b422fb61af540c3431d"
+                "reference": "7eeccf61b078bb23bb07b1a151a7e5db52871e65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maxmind/MaxMind-DB-Reader-php/zipball/571279051c3339414dc91b422fb61af540c3431d",
-                "reference": "571279051c3339414dc91b422fb61af540c3431d",
+                "url": "https://api.github.com/repos/maxmind/MaxMind-DB-Reader-php/zipball/7eeccf61b078bb23bb07b1a151a7e5db52871e65",
+                "reference": "7eeccf61b078bb23bb07b1a151a7e5db52871e65",
                 "shasum": ""
             },
             "require": {
@@ -2476,7 +2476,7 @@
                 "geolocation",
                 "maxmind"
             ],
-            "time": "2016-11-21T21:33:24+00:00"
+            "time": "2017-01-19T23:49:38+00:00"
         },
         {
             "name": "maxmind/web-service-common",
@@ -2734,16 +2734,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.22.0",
+            "version": "1.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "3b114ab800c6432ad42387ccf6bc8d4388a2885a"
+                "reference": "7cdf42c0b1cc763ab7e4c33c47a24e27c66bfccc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/3b114ab800c6432ad42387ccf6bc8d4388a2885a",
-                "reference": "3b114ab800c6432ad42387ccf6bc8d4388a2885a",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7cdf42c0b1cc763ab7e4c33c47a24e27c66bfccc",
+                "reference": "7cdf42c0b1cc763ab7e4c33c47a24e27c66bfccc",
                 "shasum": ""
             },
             "require": {
@@ -2783,7 +2783,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2017-01-15T14:47:48+00:00"
+            "time": "2017-01-16T07:55:07+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -4912,16 +4912,16 @@
         },
         {
             "name": "yajra/laravel-datatables-oracle",
-            "version": "v6.22.7",
+            "version": "v6.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "8408b5c13ddc4ae66686ebc2a2f51750cb0108ed"
+                "reference": "a7029901adf79a4bf1ab463e63d83d8b7408fef8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/8408b5c13ddc4ae66686ebc2a2f51750cb0108ed",
-                "reference": "8408b5c13ddc4ae66686ebc2a2f51750cb0108ed",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/a7029901adf79a4bf1ab463e63d83d8b7408fef8",
+                "reference": "a7029901adf79a4bf1ab463e63d83d8b7408fef8",
                 "shasum": ""
             },
             "require": {
@@ -4968,20 +4968,20 @@
                 "laravel4",
                 "laravel5"
             ],
-            "time": "2017-01-04T02:12:39+00:00"
+            "time": "2017-01-21T06:23:59+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.3.8",
+            "version": "1.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "d9c1fd7c4b024179d49faf367da544b4eef7cfe8"
+                "reference": "d5d74ca5548753e0e427fcffca89b134943bac89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/d9c1fd7c4b024179d49faf367da544b4eef7cfe8",
-                "reference": "d9c1fd7c4b024179d49faf367da544b4eef7cfe8",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/d5d74ca5548753e0e427fcffca89b134943bac89",
+                "reference": "d5d74ca5548753e0e427fcffca89b134943bac89",
                 "shasum": ""
             },
             "require": {
@@ -5018,7 +5018,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2017-01-05T21:44:28+00:00"
+            "time": "2017-01-17T16:18:33+00:00"
         }
     ],
     "packages-dev": [
@@ -5083,16 +5083,16 @@
         },
         {
             "name": "codeception/codeception",
-            "version": "2.2.7",
+            "version": "2.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Codeception.git",
-                "reference": "86770e89d266557c20dd0b1de5390e706f4770c1"
+                "reference": "0a87d4b19070a24636125993450a9d3f698a6663"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/86770e89d266557c20dd0b1de5390e706f4770c1",
-                "reference": "86770e89d266557c20dd0b1de5390e706f4770c1",
+                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/0a87d4b19070a24636125993450a9d3f698a6663",
+                "reference": "0a87d4b19070a24636125993450a9d3f698a6663",
                 "shasum": ""
             },
             "require": {
@@ -5171,7 +5171,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2016-12-05T04:12:24+00:00"
+            "time": "2017-01-20T00:54:15+00:00"
         },
         {
             "name": "container-interop/container-interop",
@@ -5618,16 +5618,16 @@
         },
         {
             "name": "laracademy/generators",
-            "version": "1.3.1",
+            "version": "1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laracademy/generators.git",
-                "reference": "60564a64f15a6ff005a1b9149d2b094533a68374"
+                "reference": "d892574124d97bcf7325ba7ed79bd4903efd3d33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laracademy/generators/zipball/60564a64f15a6ff005a1b9149d2b094533a68374",
-                "reference": "60564a64f15a6ff005a1b9149d2b094533a68374",
+                "url": "https://api.github.com/repos/laracademy/generators/zipball/d892574124d97bcf7325ba7ed79bd4903efd3d33",
+                "reference": "d892574124d97bcf7325ba7ed79bd4903efd3d33",
                 "shasum": ""
             },
             "type": "library",
@@ -5651,7 +5651,7 @@
                 "generators",
                 "laravel"
             ],
-            "time": "2016-09-07T03:19:35+00:00"
+            "time": "2017-01-21T07:22:28+00:00"
         },
         {
             "name": "laracasts/generators",
@@ -6446,16 +6446,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "4.0.4",
+            "version": "4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "c14196e64a78570034afd0b7a9f3757ba71c2a0a"
+                "reference": "c19cfc7cbb0e9338d8c469c7eedecc2a428b0971"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c14196e64a78570034afd0b7a9f3757ba71c2a0a",
-                "reference": "c14196e64a78570034afd0b7a9f3757ba71c2a0a",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c19cfc7cbb0e9338d8c469c7eedecc2a428b0971",
+                "reference": "c19cfc7cbb0e9338d8c469c7eedecc2a428b0971",
                 "shasum": ""
             },
             "require": {
@@ -6505,7 +6505,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-12-20T15:22:42+00:00"
+            "time": "2017-01-20T15:06:43+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
