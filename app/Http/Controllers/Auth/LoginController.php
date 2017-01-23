@@ -52,4 +52,14 @@ class LoginController extends Controller
             // new rules here
         ]);
     }
+
+    /**
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    public function username()
+    {
+        return 'username';
+    }
 }

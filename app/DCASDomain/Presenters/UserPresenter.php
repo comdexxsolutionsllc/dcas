@@ -11,6 +11,11 @@ class UserPresenter extends Presenter {
         return $this->first_name . " " . $this->last_name;
     }
 
+    //public function username()
+    //{
+    //    return $this->username;
+    //}
+
     public function accountAge()
     {
         return $this->created_at->diffForHumans();

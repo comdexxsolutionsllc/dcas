@@ -78,15 +78,29 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                        {{--<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} {{ request()->exists('staff') ? ' hideThis' : '' }}">--}}
+                            {{--<label for="email" class="col-md-4 control-label">E-Mail Address</label>--}}
+
+                            {{--<div class="col-md-6">--}}
+                                {{--<input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-mail Address" required autofocus>--}}
+
+                                {{--@if ($errors->has('email'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{{ $errors->first('email') }}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+
+                        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                            <label for="username" class="col-md-4 control-label">Username</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-mail Address" required autofocus>
+                                <input id="email" type="username" class="form-control" name="username" value="{{ old('username') }}" placeholder="User Name" required autofocus>
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('username'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('username') }}</strong>
                                     </span>
                                 @endif
                             </div>
